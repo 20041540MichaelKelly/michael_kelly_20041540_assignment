@@ -1,17 +1,17 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import TvShowDetails from "../components/tvShowDetails";
-import PageTemplate from "../components/templateTvShowsPage";
+import PageTemplate from "../components/templateTvShowPage";
 //import useMovie from "../hooks/useMovie";
-import { getTvShow } from '../api/tmdb-api';
+import { getTvShow } from '../api/tmdb-api'
 import { useQuery } from "react-query";
-import Spinner from '../components/spinner';
+import Spinner from '../components/spinner'
 
-const TvShowDetailsPage = (props) => {
+const TvShowsDetailsPage = (props) => {
   const { id } = props.match.params
 
-  const { data: show, error, isLoading, isError } = useQuery(
-    ["show", { id: id }],
+  const { data: tvShow, error, isLoading, isError } = useQuery(
+    ["tv", { id: id }],
     getTvShow
   );
 
@@ -25,10 +25,10 @@ const TvShowDetailsPage = (props) => {
 
   return (
     <>
-      {show ? (
+      {tvShow ? (
         <>
-          <PageTemplate show={show}>
-            <TvShowDetails show={show} />
+          <PageTemplate tvShow={tvShow}>
+            <TvShowDetails tvShow={tvShow} />
           </PageTemplate>
         </>
       ) : (
@@ -38,4 +38,4 @@ const TvShowDetailsPage = (props) => {
   );
 };
 
-export default withRouter(TvShowDetailsPage);
+export default withRouter(TvShowsDetailsPage);

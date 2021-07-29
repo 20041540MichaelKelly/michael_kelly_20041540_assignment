@@ -1,6 +1,6 @@
 import React from "react";
 
-const TvReview =  ({ review }) => {
+const TvShowReview =  ({ review }) => {
   return (
     <>
       <p>Review By: {review.author} </p>
@@ -8,4 +8,4 @@ const TvReview =  ({ review }) => {
     </>
   );
 };
-export default TvReview
+export default TvShowReview

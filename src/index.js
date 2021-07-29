@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import UpComingMoviesPage from "./pages/upComingMoviesPage";
-import GetTvShows from "./pages/tvShowsPage";
+import TvShowsPage from "./pages/tvShowsPage";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
+import TvShowsPageDetails from "./pages/tvShowsDetailsPage";
 import FavoriteMoviesPage from "./pages/favouriteMoviesPage"; 
+// import FavoriteTvShowsPage from "./pages/favouriteTvShowPage"; 
+
 import MovieReviewPage from "./pages/movieReviewPage";
 
 import WatchlistMoviesPage from "./pages/watchlistMoviePage";
@@ -35,8 +38,9 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
+            <Route exact path="/tv" component={TvShowsPage} />
+                <Route exact path="/tv/tv" component={TvShowsPageDetails} />
                 <Route exact path="/movies/kids" component={KidsMoviePage} />
-                <Route exact path="/tv" component={GetTvShows} />
                 <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
                 <Route exact path="/reviews/form" component={AddMovieReviewPage} />
                 <Route path="/reviews/:id" component={MovieReviewPage} />
@@ -44,10 +48,21 @@ const App = () => {
                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
+                <Route path="/tv/:id" component={MoviePage} />
+
                 <Route exact path="/" component={HomePage} />
                 <Redirect from="*" to="/" />
             </Switch>
         </MoviesContextProvider>
+        <TvShowsContextProvider>
+        {" "}
+            <Switch>
+               
+                
+                
+        
+            </Switch>
+        </TvShowsContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
