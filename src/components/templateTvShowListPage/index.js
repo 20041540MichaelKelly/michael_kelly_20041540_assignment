@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../headerMovieList";
+import Header from "../headerTvShowList";
 import FilterCard from "../filterTvShowCard";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,6 +12,7 @@ const useStyles = makeStyles({
 });
 
 function TvShowListPageTemplate({ tvShows, title, action }) {
+  console.log(tvShows)
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
@@ -19,12 +20,15 @@ function TvShowListPageTemplate({ tvShows, title, action }) {
 
   let displayedTvShows = tvShows
     .filter((m) => {
+        if(m.title){
       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+        }
+        return m.title
     })
     .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
     });
-
+console.log(displayedTvShows)
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
     else setGenreFilter(value);
@@ -43,7 +47,7 @@ function TvShowListPageTemplate({ tvShows, title, action }) {
             genreFilter={genreFilter}
           />
         </Grid>
-        <TvShowList action={action} tvShows={displayedTvShows}></TvShowList>
+        <TvShowList action={action} tvShows={tvShows}></TvShowList>
       </Grid>
     </Grid>
   );

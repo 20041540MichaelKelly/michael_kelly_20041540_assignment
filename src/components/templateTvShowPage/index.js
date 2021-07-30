@@ -21,12 +21,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TemplateTvShowPage = ({ tvShow, children }) => {
+ console.log(tvShow);
   const classes = useStyles();
   const { data , error, isLoading, isError } = useQuery(
     ["images", { id: tvShow.id }],
     getTvShowImages
   );
-
+console.log(TemplateTvShowPage)
   if (isLoading) {
     return <Spinner />;
   }

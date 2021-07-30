@@ -11,17 +11,20 @@ export const getUpComingMovies = async () => {
 
 export const getMovies = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&limit=10 `
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=4 `
   );
   if (!response.ok) {
     throw new Error(response.json().message);
   }
-  return response.json();
+  console.log(response);
+  const ans =response.json();
+  console.log(ans);
+  return ans
 };
 
 export const getTvShows = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&limit=10`
+    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
   );
   if (!response.ok) {
     throw new Error(response.json().message);
@@ -98,7 +101,7 @@ export const getTvShow = async ( args ) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json.results);
+         console.log(json.results);
         return json.results;
       });
   };
@@ -119,7 +122,7 @@ export const getTvShow = async ( args ) => {
       )
         .then((res) => res.json())
         .then((json) => {
-          // console.log(json.results);
+         console.log(json.results);
           return json.results;
         });
     };

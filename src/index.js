@@ -35,10 +35,14 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
+        <TvShowsContextProvider>
         <MoviesContextProvider>
             {" "}
             <Switch>
+            
             <Route exact path="/tv" component={TvShowsPage} />
+            
+            
                 <Route exact path="/tv/tv" component={TvShowsPageDetails} />
                 <Route exact path="/movies/kids" component={KidsMoviePage} />
                 <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
@@ -48,21 +52,14 @@ const App = () => {
                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
-                <Route path="/tv/:id" component={MoviePage} />
+                
 
                 <Route exact path="/" component={HomePage} />
                 <Redirect from="*" to="/" />
-            </Switch>
-        </MoviesContextProvider>
-        <TvShowsContextProvider>
-        {" "}
-            <Switch>
-               
                 
-                
-        
             </Switch>
-        </TvShowsContextProvider>
+            </MoviesContextProvider>
+            </TvShowsContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

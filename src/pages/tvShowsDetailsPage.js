@@ -9,6 +9,7 @@ import Spinner from '../components/spinner'
 
 const TvShowsDetailsPage = (props) => {
   const { id } = props.match.params
+  console.log(id)
 
   const { data: tvShow, error, isLoading, isError } = useQuery(
     ["tv", { id: id }],

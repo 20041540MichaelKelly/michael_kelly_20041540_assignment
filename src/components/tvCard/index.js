@@ -30,6 +30,7 @@ export default function TvCard({ tvShow, action }) {
   const classes = useStyles();
   const { favorites } = useContext(TvShowsContext);
   const { watchlist } = useContext(TvShowsContext);
+  console.log(tvShow)
   if (favorites.find((id) => id === TvShowDetails.id)) {
     tvShow.favorite = true;
   } else {
