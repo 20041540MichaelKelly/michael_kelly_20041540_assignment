@@ -10,7 +10,7 @@ import FavoriteMoviesPage from "./pages/favouriteMoviesPage";
 // import FavoriteTvShowsPage from "./pages/favouriteTvShowPage"; 
 
 import MovieReviewPage from "./pages/movieReviewPage";
-
+import TvShowsDetailsPage from "./pages/tvShowsDetailsPage";
 import WatchlistMoviesPage from "./pages/watchlistMoviePage";
 import KidsMoviePage from "./pages/kidsMoviePage";
 import SiteHeader from './components/siteHeader';
@@ -40,10 +40,8 @@ const App = () => {
             {" "}
             <Switch>
             
-            <Route exact path="/tv" component={TvShowsPage} />
-            
-            
-                <Route exact path="/tv/tv" component={TvShowsPageDetails} />
+                <Route exact path="/tv" component={TvShowsPage} />
+                <Route exact path="/tv/:id" component={TvShowsDetailsPage} />
                 <Route exact path="/movies/kids" component={KidsMoviePage} />
                 <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
                 <Route exact path="/reviews/form" component={AddMovieReviewPage} />

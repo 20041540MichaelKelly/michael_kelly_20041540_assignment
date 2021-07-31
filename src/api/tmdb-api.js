@@ -24,7 +24,7 @@ export const getMovies = async () => {
 
 export const getTvShows = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=4`
   );
   if (!response.ok) {
     throw new Error(response.json().message);

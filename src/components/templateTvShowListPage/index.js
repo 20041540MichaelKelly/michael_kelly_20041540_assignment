@@ -13,21 +13,25 @@ const useStyles = makeStyles({
 
 function TvShowListPageTemplate({ tvShows, title, action }) {
   console.log(tvShows)
+
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genreId = Number(genreFilter);
-
-  let displayedTvShows = tvShows
+  let titles ="";
+   let displayedTvShows = tvShows
+   .filter((m) => {
+    return m.title !== 'undefined';
+  })
     .filter((m) => {
-        if(m.title){
-      return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-        }
-        return m.title
+     return titles.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+    
     })
     .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
     });
+  
+  
 console.log(displayedTvShows)
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
@@ -47,9 +51,10 @@ console.log(displayedTvShows)
             genreFilter={genreFilter}
           />
         </Grid>
-        <TvShowList action={action} tvShows={tvShows}></TvShowList>
+        <TvShowList action={action} tvShows={displayedTvShows}></TvShowList>
       </Grid>
     </Grid>
   );
 }
+
 export default TvShowListPageTemplate;

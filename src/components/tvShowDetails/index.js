@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
-
   return (
     <>
       <Typography variant="h5" component="h3">
