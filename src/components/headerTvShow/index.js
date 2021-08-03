@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
 
 const TvShowHeader = ( { tvShow, history}) => {
   const classes = useStyles();
+  console.log(tvShow);
 
   return (
     <Paper component="div" className={classes.root}>
       <IconButton aria-label="go back" onClick={() => history.goBack()} >
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
-
       <Typography variant="h4" component="h3">
-        {tvShow.title}
+        {tvShow.name}
         <a href={tvShow.homepage}>
           <HomeIcon color="primary" />
         </a>

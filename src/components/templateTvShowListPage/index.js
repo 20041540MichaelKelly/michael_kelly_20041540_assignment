@@ -20,11 +20,8 @@ function TvShowListPageTemplate({ tvShows, title, action }) {
   const genreId = Number(genreFilter);
   let titles ="";
    let displayedTvShows = tvShows
-   .filter((m) => {
-    return m.title !== 'undefined';
-  })
     .filter((m) => {
-     return titles.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+     return titles.toLowerCase().search(nameFilter.toLowerCase()) !== -1 ;//&& titles.toLowerCase().search(nameFilter.toLowerCase())  !== 'undefined';
     
     })
     .filter((m) => {

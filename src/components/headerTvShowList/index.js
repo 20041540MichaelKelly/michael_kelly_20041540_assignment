@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ShowHeader = ({ title, history }) => {
   const classes = useStyles();
- 
+
   return (
     <Paper component="div" className={classes.root}>
       <IconButton aria-label="go back" onClick={() => history.goBack()}>
@@ -26,7 +26,7 @@ const ShowHeader = ({ title, history }) => {
       </IconButton>
 
       <Typography variant="h4" component="h3">
-        {title}
+        {title} 
       </Typography>
       <IconButton aria-label="go forward" onClick={() => history.goForward()}>
         <ArrowForwardIcon color="primary" fontSize="large" />

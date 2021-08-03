@@ -12,6 +12,7 @@ import Menu from "@material-ui/core/Menu";
 import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import NativeSelect from '@material-ui/core/NativeSelect';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -33,6 +34,7 @@ const SiteHeader = ( { history }) => {
     { label: "Kids Movies", path: "/movies/kids" },
     { label: "Upcoming Movies", path: "/movies/upcoming" },
     { label: "WatchList", path: "/movies/watchlist" },
+    { label: "TvShows", path: "/tv" },
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -91,15 +93,48 @@ const SiteHeader = ( { history }) => {
               </>
             ) : (
               <>
-                {menuOptions.map((opt) => (
+              <Button
+                  aria-label="menu"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                >
+                  Shows
+                </Button>
+              <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={open}
+                  onClose={() => setAnchorEl(null)}
+                >
+              {menuOptions.map((opt) => (
+                    <MenuItem
+                      key={opt.label}
+                      onClick={() => handleMenuSelect(opt.path)}
+                    >
+                      {opt.label}
+                    </MenuItem>
+                    ))}
+                    </Menu>
+                {/* {menuOptions.map((opt) => (
                   <Button
                     key={opt.label}
                     color="inherit"
                     onClick={() => handleMenuSelect(opt.path)}
                   >
-                    {opt.label}
+                    {opt.label} 
                   </Button>
-                ))}
+                ))} */}
               </>
             )}
         </Toolbar>

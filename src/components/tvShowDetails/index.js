@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import MonetizationIcon from "@material-ui/icons/MonetizationOn";
+import PlusOneTwoToneIcon from '@material-ui/icons/PlusOneTwoTone';
 import StarRate from "@material-ui/icons/StarRate";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
@@ -33,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
 const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -54,16 +56,15 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
         ))}
       </Paper>
       <Paper component="ul" className={classes.root}>
-        <Chip icon={<AccessTimeIcon />} label={`${tvShow.runtime} min.`} />
-        <Chip
-          icon={<MonetizationIcon />}
-          label={`${tvShow.revenue.toLocaleString()}`}
+        <Chip icon={<AccessTimeIcon />} label={`${tvShow.episode_run_time} min.`} />
+        <Chip icon={<PlusOneTwoToneIcon />}
+          label={`no of Seasons: ${tvShow.number_of_seasons.toLocaleString()}`}
         />
         <Chip
           icon={<StarRate />}
-          label={`${tvShow.vote_average} (${tvShow.vote_count}`}
+          label={`${tvShow.vote_average} (${tvShow.vote_count})`}
         />
-        <Chip label={`Released: ${tvShow.release_date}`} />
+        <Chip label={`Released: ${tvShow.first_air_date}`} />
       </Paper>
       <Paper component="ul" className={classes.root}>
         <li>
