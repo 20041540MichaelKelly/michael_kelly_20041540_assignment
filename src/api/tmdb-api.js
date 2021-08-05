@@ -31,6 +31,16 @@ export const getTvShows = async () => {
   }
   return response.json();
 };
+
+export const getMostPopularTvShows = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&sort_by=popularity.desc`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  return response.json();
+};
   
 export const getMovie = async ( args ) => {
    console.log(args)

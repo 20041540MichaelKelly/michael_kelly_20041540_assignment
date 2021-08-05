@@ -34,7 +34,12 @@ const SiteHeader = ( { history }) => {
     { label: "Kids Movies", path: "/movies/kids" },
     { label: "Upcoming Movies", path: "/movies/upcoming" },
     { label: "WatchList", path: "/movies/watchlist" },
+    // { label: "TvShows", path: "/tv" },
+  ];
+
+  const menuTvOptions = [
     { label: "TvShows", path: "/tv" },
+    { label: "Popular", path: "/tv/popular" },
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -93,6 +98,15 @@ const SiteHeader = ( { history }) => {
               </>
             ) : (
               <>
+              {menuTvOptions.map((opt) => (
+                  <Button
+                    key={opt.label}
+                    color="inherit"
+                    onClick={() => handleMenuSelect(opt.path)}
+                  >
+                    {opt.label} 
+                  </Button>
+                ))}
               <Button
                   aria-label="menu"
                   aria-controls="menu-appbar"
@@ -100,9 +114,9 @@ const SiteHeader = ( { history }) => {
                   onClick={handleMenu}
                   color="inherit"
                 >
-                  Shows
+                  Movies
                 </Button>
-              <Menu
+                <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
                   anchorOrigin={{
@@ -117,6 +131,16 @@ const SiteHeader = ( { history }) => {
                   open={open}
                   onClose={() => setAnchorEl(null)}
                 >
+                  
+              {menuTvOptions.map((opt) => (
+                    <MenuItem
+                      key={opt.label}
+                      onClick={() => handleMenuSelect(opt.path)}
+                    >
+                      {opt.label}
+                    </MenuItem>
+                    ))}
+                  
               {menuOptions.map((opt) => (
                     <MenuItem
                       key={opt.label}

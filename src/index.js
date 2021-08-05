@@ -5,7 +5,7 @@ import UpComingMoviesPage from "./pages/upComingMoviesPage";
 import TvShowsPage from "./pages/tvShowsPage";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
-import TvShowsPageDetails from "./pages/tvShowsDetailsPage";
+import PopularTvShowsPage from "./pages/popularTvShowsPage";
 import FavoriteMoviesPage from "./pages/favouriteMoviesPage"; 
 // import FavoriteTvShowsPage from "./pages/favouriteTvShowPage"; 
 
@@ -42,6 +42,7 @@ const App = () => {
             
                 <Route exact path="/tv" component={TvShowsPage} />
                 <Route exact path="/tv/:id" component={TvShowsDetailsPage} />
+                <Route exact path="/tv/popular" component={PopularTvShowsPage} />
                 <Route exact path="/movies/kids" component={KidsMoviePage} />
                 <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
                 <Route exact path="/reviews/form" component={AddMovieReviewPage} />
