@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 });
 
 function TvShowListPageTemplate({ tvShows, title, action }) {
-  console.log(tvShows)
+  console.log(title)
 
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");

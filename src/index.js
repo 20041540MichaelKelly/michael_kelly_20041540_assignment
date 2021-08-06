@@ -39,10 +39,9 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
-            
-                <Route exact path="/tv" component={TvShowsPage} />
-                <Route exact path="/tv/:id" component={TvShowsDetailsPage} />
                 <Route exact path="/tv/popular" component={PopularTvShowsPage} />
+                <Route exact path="/tv" component={TvShowsPage} />
+                <Route path="/tv/:id" component={TvShowsDetailsPage} />
                 <Route exact path="/movies/kids" component={KidsMoviePage} />
                 <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
                 <Route exact path="/reviews/form" component={AddMovieReviewPage} />
