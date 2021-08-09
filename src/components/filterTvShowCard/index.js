@@ -41,6 +41,7 @@ export default function FilterTvShowsCard(props) {
     return <h1>{error.message}</h1>;
   }
   const genres = data.genres;
+  console.log(genres);
   genres.unshift({ id: "0", name: "All" });
 
   const handleChange = (e, type, value) => {
