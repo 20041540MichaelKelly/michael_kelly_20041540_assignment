@@ -8,9 +8,23 @@ export const getUpComingMovies = async () => {
     return response.json();
   };
 
+
 export const getMovies = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=4 `
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  console.log(response);
+  const ans =response.json();
+  console.log(ans);
+  return ans
+};
+
+export const getTvShows = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=4`
   );
   if (!response.ok) {
     throw new Error(response.json().message);
@@ -33,6 +47,7 @@ export const getMovie = async ( args ) => {
 
 export const getTvShow = async ( args ) => {
   console.log(args)
+  console.log('yo')
  // eslint-disable-next-line no-unused-vars
  const [prefix, { id }] = args.queryKey;
  const response = await fetch(
@@ -68,7 +83,7 @@ export const getTvShow = async ( args ) => {
     return response.json();
   };
 
-  export const getTvImages = async ({queryKey}) => {
+  export const getTvShowImages = async ({queryKey}) => {
     // eslint-disable-next-line no-unused-vars
     const [prefix, { id }] = queryKey;
     const response = await fetch(
@@ -86,7 +101,7 @@ export const getTvShow = async ( args ) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json.results);
+         console.log(json.results);
         return json.results;
       });
   };
@@ -100,13 +115,16 @@ export const getTvShow = async ( args ) => {
       }
       return response.json();
     };
+
+    export const getTvShowReviews = (id) => {
+      return fetch(
+        `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      )
+        .then((res) => res.json())
+        .then((json) => {
+         console.log(json.results);
+          return json.results;
+        });
+    };
   
-    export const getTvShows= async () => {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&certification_country=US&certification=PG&sort_by=popularity.desc`
-        );
-        if (!response.ok) {
-          throw new Error(response.json().message);
-        }
-        return response.json();
-      };
+    

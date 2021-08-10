@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import {getTvShow} from '../api/tmdb-api'
 
 const useTvShow = id => {
-  const [show, setTvShow] = useState(null);
+  const [tvShow, setTvShow] = useState(null);
   useEffect(() => {
-    getTvShow(id).then(show => {
-      setTvShow(show);
+    getTvShow(id).then(tvShow => {
+      setTvShow(tvShow);
     });
   }, [id]);
-  return [show, setTvShow];
+  return [tvShow, setTvShow];
 };
 
 export default useTvShow

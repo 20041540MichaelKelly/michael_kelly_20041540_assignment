@@ -1,13 +1,12 @@
 import React from "react";  // useState/useEffect redundant 
-import MovieHeader from "../headerMovie";
+import TvShowHeader from "../headerTvShow";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import { getTvImages } from "../../api/tmdb-api";
+import { getTvShowImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
-import { ShowChart, ShowChartOutlined } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TemplateTvShowsPage = ({ show, children }) => {
-  console.log('yo'+show);
+const TemplateTvShowPage = ({ tvShow, children }) => {
+ console.log(tvShow);
   const classes = useStyles();
   const { data , error, isLoading, isError } = useQuery(
-    ["images", { id: show.id }],
-    getTvImages
+    ["images", { id: tvShow.id }],
+    getTvShowImages
   );
-
+console.log(TemplateTvShowPage)
   if (isLoading) {
     return <Spinner />;
   }
@@ -40,7 +39,7 @@ const TemplateTvShowsPage = ({ show, children }) => {
 
   return (
     <>
-      <MovieHeader show={ShowChart} />
+      <TvShowHeader tvShow={tvShow} />
 
       <Grid container spacing={5} style={{ padding: "15px" }}>
         <Grid item xs={3}>
@@ -66,4 +65,4 @@ const TemplateTvShowsPage = ({ show, children }) => {
   );
 };
 
-export default TemplateTvShowsPage;
+export default TemplateTvShowPage;

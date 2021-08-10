@@ -15,7 +15,8 @@ import Grid from "@material-ui/core/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
-import { TvShowsContext } from "../../contexts/TvShowsContext";
+import { TvShowsContext } from "../../contexts/tvShowsContext";
+import TvShowDetails from "../tvShowDetails";
 
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
@@ -25,20 +26,21 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TvCard({ shows, action }) {
+export default function TvCard({ tvShow, action }) {
   const classes = useStyles();
   const { favorites } = useContext(TvShowsContext);
   const { watchlist } = useContext(TvShowsContext);
-  if (favorites.find((id) => id === shows.id)) {
-    shows.favorite = true;
+  console.log(tvShow)
+  if (favorites.find((id) => id === TvShowDetails.id)) {
+    tvShow.favorite = true;
   } else {
-    shows.favorite = false
+    tvShow.favorite = false
   }
 
-  if (watchlist.find((id) => id === shows.id)) {
-    shows.watchlist = true;
+  if (watchlist.find((id) => id === tvShow.id)) {
+    tvShow.watchlist = true;
   } else {
-    shows.watchlist= false
+    tvShow.watchlist= false
   }
 
   return (
@@ -46,12 +48,12 @@ export default function TvCard({ shows, action }) {
       <CardHeader
         className={classes.header}
         avatar={
-          shows.favorite ? (
+          tvShow.favorite ? (
             <Avatar className={classes.avatar}>
               <FavoriteIcon />
             </Avatar>
           ) : 
-          shows.watchlist ? (
+          tvShow.watchlist ? (
             <Avatar className={classes.avatar}>
               <PlaylistIcon />
             </Avatar>
@@ -59,15 +61,15 @@ export default function TvCard({ shows, action }) {
         }
         title={
           <Typography variant="h5" component="p">
-            {shows.title}{" "}
+            {tvShow.name}{" "}
           </Typography>
         }
       />
       <CardMedia
         className={classes.media}
         image={
-          shows.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+          tvShow.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${tvShow.poster_path}`
             : img
         }
       />
@@ -76,20 +78,20 @@ export default function TvCard({ shows, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {shows.release_date}
+              {tvShow.first_air_date}
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {shows.vote_average}{" "}
+              {"  "} {tvShow.vote_average}{" "}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-        {action(shows)}
-        <Link to={`/tv/${shows.id}`}>
+        {action(tvShow)}
+        <Link to={`/tv/${tvShow.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>

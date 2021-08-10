@@ -1,13 +1,13 @@
 import React from "react";
-import PageTemplate from "../components/templateTvShowsPage";
+import PageTemplate from "../components/templateTvShowListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
 import {getTvShows} from '../api/tmdb-api'
 //import AddToFavoritesIcon from '../components/cardIcons/addToFavourites'
-import PlaylistAddIcon from '../components/cardIcons/playlistAddIcon'
+import PlaylistAddIcon from '../components/cardIcons/playlistTvShowAddIcon'
 
 const TvShowsPage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('show', getTvShows)
+  const {  data, error, isLoading, isError }  = useQuery('tv', getTvShows)
 
   if (isLoading) {
     return <Spinner />
@@ -16,21 +16,22 @@ const TvShowsPage = (props) => {
   if (isError) {
     return <h1>{error.message}</h1>
   }  
-  const show = data.results;
-
+  const tvShows = data.results;
+  console.log(data.results)
   // Redundant, but necessary to avoid app crashing.
-  const watchlists = show.filter(m => m.watchlist)
+  const watchlists = tvShows.filter(m => m.watchlist)
   localStorage.setItem('watchlists', JSON.stringify(watchlists))
+  console.log(tvShows)
   //const addToFavorites = (movieId) => true 
 
   return (
     <PageTemplate
-      title="TV Shows"
-      show={show}
-      action={(sho) => {
-        return <PlaylistAddIcon sho={sho} />
+      title="Tv Shows"
+      tvShows={tvShows}
+      action={(tvShow) => {
+        return <PlaylistAddIcon tvShow={tvShow} />
       }}
-    />
+     />
  );
 };
 
