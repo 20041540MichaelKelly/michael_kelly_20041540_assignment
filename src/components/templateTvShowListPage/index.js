@@ -12,16 +12,16 @@ const useStyles = makeStyles({
 });
 
 function TvShowListPageTemplate({ tvShows, title, action }) {
-  console.log(title)
+  console.log(tvShows)
 
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genreId = Number(genreFilter);
-  
+  let titles ="";
    let displayedTvShows = tvShows
     .filter((m) => {
-     return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1; //&& m.titles.toLowerCase().search(nameFilter.toLowerCase())  !== 'undefined';
+     return titles.toLowerCase().search(nameFilter.toLowerCase()) !== -1 ;//&& titles.toLowerCase().search(nameFilter.toLowerCase())  !== 'undefined';
     
     })
     .filter((m) => {
