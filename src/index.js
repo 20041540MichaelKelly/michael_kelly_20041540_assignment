@@ -7,7 +7,7 @@ import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import PopularTvShowsPage from "./pages/popularTvShowsPage";
 import FavoriteMoviesPage from "./pages/favouriteMoviesPage"; 
-// import FavoriteTvShowsPage from "./pages/favouriteTvShowPage"; 
+import AnonymousAuthPage from "./pages/anonymousAuthPage"; 
 
 import MovieReviewPage from "./pages/movieReviewPage";
 import TvShowsDetailsPage from "./pages/tvShowsDetailsPage";
@@ -52,7 +52,7 @@ const App = () => {
                 <Route path="/movies/:id" component={MoviePage} />
                 
 
-                <Route exact path="/" component={HomePage} />
+                <Route exact path="/" component={AnonymousAuthPage} />
                 <Redirect from="*" to="/" />
                 
             </Switch>
