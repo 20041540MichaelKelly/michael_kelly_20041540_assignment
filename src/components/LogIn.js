@@ -10,7 +10,34 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import { FcAddressBook } from "react-icons/fc";
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import IconButton from '@material-ui/core/IconButton';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import FilledInput from '@material-ui/core/FilledInput';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+
+import FormHelperText from '@material-ui/core/FormHelperText';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        maxWidth: '25%',
+        marginTop: '20ch',
+        marginLeft: '35%',
+      },
+    margin: {
+      margin: theme.spacing(80),
+    },
+    withoutLabel: {
+      marginTop: theme.spacing(3),
+    },
+    textField: {
+      width: '25ch',
+    },
+  }));
+
 
 const LogIn = () => {
   const handleSubmit = (e) => {
@@ -22,13 +49,32 @@ const LogIn = () => {
       alert(error);
     }
   };
+  const classes = useStyles();
+  const [values, setValues] = React.useState({
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
   const { currentUser } = useContext(AuthContext);
   if (currentUser) {
     return <Redirect to="/dashboard" />;
   }
   return (
     <>
+     <Card className={classes.root}>
+      <CardContent className={classes.withoutLabel}>
       <h1>Log In</h1>
+     
       <form onSubmit={handleSubmit}>
       <InputLabel htmlFor="input-with-icon-adornment">Email</InputLabel>
         <Input
@@ -41,20 +87,39 @@ const LogIn = () => {
           }
         />
         <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" />
+        <InputLabel htmlFor="input-with-icon-adornment">Password</InputLabel>
+        <Input
+          id="input-with-icon-adornment"
+          type="password" name="password"
+          startAdornment={
+            <InputAdornment position="start">
+              <AccountCircle />
+            </InputAdornment>
+          }
+        />
+         {/* <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" />  */}
         </div>
         
+            
         <button
                         style={{
                         width: 100,
+                        marginTop: 20,
                         height: 40,
                         alignSelf: "center",
                         background: "#039BE5",
                         color: "white"
                     }}type="submit">Submit</button>
+                    
+                    
       </form>
-      <form onSubmit={handleSubmit}>
+      </CardContent>
+      </Card>
+      
+      
+      
+      {/* <form onSubmit={handleSubmit}>
         <InputLabel htmlFor="input-with-icon-adornment">Email</InputLabel>
         <Input
           id="input-with-icon-adornment"
@@ -100,7 +165,7 @@ const LogIn = () => {
                 </form>
                 
             </div>
-        </div>
+        </div> */}
            
     </>
   );
