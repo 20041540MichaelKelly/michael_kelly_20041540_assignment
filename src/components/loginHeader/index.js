@@ -5,11 +5,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
-import firebaseConfig from "../../test-credentials";
+
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { withRouter, Link, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import NativeSelect from '@material-ui/core/NativeSelect';
@@ -29,18 +29,9 @@ const SiteHeader = ( { history }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuOptions = [
-    { label: "Home", path: "/" },
-    { label: "Favorites", path: "/movies/favorites" },
-    { label: "Kids Movies", path: "/movies/kids" },
-    { label: "Upcoming Movies", path: "/movies/upcoming" },
-    { label: "WatchList", path: "/movies/watchlist" },
+    { label: "Login", path: "/login" },
+    { label: "Sign Up", path: "/signup" },
     // { label: "TvShows", path: "/tv" },
-  ];
-
-  const menuTvOptions = [
-    { label: "TvShows", path: "/tv" },
-    { label: "Popular", path: "/tv/popular" },
-    
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -99,7 +90,7 @@ const SiteHeader = ( { history }) => {
               </>
             ) : (
               <>
-              {menuTvOptions.map((opt) => (
+         {menuOptions.map((opt) => (
                   <Button
                     key={opt.label}
                     color="inherit"
@@ -107,67 +98,7 @@ const SiteHeader = ( { history }) => {
                   >
                     {opt.label} 
                   </Button>
-                ))}
-                <Button 
-                color="inherit"
-                onClick={() => firebaseConfig.auth().signOut()} 
-                >
-                  <Link to="/login">Sign out</Link>
-                  
-                </Button>
-
-              <Button
-                  aria-label="menu"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleMenu}
-                  color="inherit"
-                >
-                  Movies
-                </Button>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={open}
-                  onClose={() => setAnchorEl(null)}
-                >
-                  
-              {/* {menuTvOptions.map((opt) => (
-                    <MenuItem
-                      key={opt.label}
-                      onClick={() => handleMenuSelect(opt.path)}
-                    >
-                      {opt.label}
-                    </MenuItem>
-                    ))} */}
-                  
-              {menuOptions.map((opt) => (
-                    <MenuItem
-                      key={opt.label}
-                      onClick={() => handleMenuSelect(opt.path)}
-                    >
-                      {opt.label}
-                    </MenuItem>
-                    ))}
-                    </Menu>
-                {/* {menuOptions.map((opt) => (
-                  <Button
-                    key={opt.label}
-                    color="inherit"
-                    onClick={() => handleMenuSelect(opt.path)}
-                  >
-                    {opt.label} 
-                  </Button>
-                ))} */}
+                ))} 
               </>
             )}
         </Toolbar>
