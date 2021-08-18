@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Header from "../headerMovieList";
-import FilterCard from "../filterMoviesCard";
+import Header from "../headerTvShowList";
+import FilterCard from "../filterTvShowCard";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import TvList from "../tvList";
+import TvShowList from "../tvShowList";
 
 const useStyles = makeStyles({
   root: {
@@ -11,20 +11,25 @@ const useStyles = makeStyles({
   },
 });
 
-function TvListPageTemplate({ shows, title, action }) {
+function TvShowListPageTemplate({ tvShows, title, action }) {
+  console.log(title)
+
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genreId = Number(genreFilter);
-
-  let displayedShows = shows
-    .filter((s) => {
-      return s.title.max(10).toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+  
+   let displayedTvShows = tvShows
+    .filter((m) => {
+     return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1; //&& m.titles.toLowerCase().search(nameFilter.toLowerCase())  !== 'undefined';
+    
     })
-    .filter((s) => {
+    .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
     });
-
+  
+  
+console.log(displayedTvShows)
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
     else setGenreFilter(value);
@@ -43,9 +48,10 @@ function TvListPageTemplate({ shows, title, action }) {
             genreFilter={genreFilter}
           />
         </Grid>
-        <TvList action={action} shows={displayedShows}></TvList>
+        <TvShowList action={action} tvShows={displayedTvShows}></TvShowList>
       </Grid>
     </Grid>
   );
 }
-export default TvListPageTemplate;
+
+export default TvShowListPageTemplate;

@@ -1,13 +1,12 @@
 import React from "react";  // useState/useEffect redundant 
-import MovieHeader from "../headerMovie";
+import PersonHeader from "../headerPerson";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import { getTvImages } from "../../api/tmdb-api";
+import { getPeopleImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
-import { ShowChart, ShowChartOutlined } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TemplateTvShowsPage = ({ show, children }) => {
-  console.log('yo'+show);
+const TemplatePeoplePage = ({ person, children }) => {
+ 
   const classes = useStyles();
   const { data , error, isLoading, isError } = useQuery(
-    ["images", { id: show.id }],
-    getTvImages
+    ["images", { id: person.id }],
+    getPeopleImages
   );
-
+console.log(TemplatePeoplePage)
   if (isLoading) {
     return <Spinner />;
   }
@@ -40,7 +39,7 @@ const TemplateTvShowsPage = ({ show, children }) => {
 
   return (
     <>
-      <MovieHeader show={ShowChart} />
+      <PersonHeader person={person} />
 
       <Grid container spacing={5} style={{ padding: "15px" }}>
         <Grid item xs={3}>
@@ -66,4 +65,4 @@ const TemplateTvShowsPage = ({ show, children }) => {
   );
 };
 
-export default TemplateTvShowsPage;
+export default TemplatePeoplePage;

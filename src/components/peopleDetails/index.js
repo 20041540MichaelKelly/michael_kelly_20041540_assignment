@@ -2,14 +2,13 @@ import React, { useState} from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import PlusOneTwoToneIcon from '@material-ui/icons/PlusOneTwoTone';
+import MonetizationIcon from "@material-ui/icons/MonetizationOn";
 import StarRate from "@material-ui/icons/StarRate";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import TvShowReviews from "../tvShowReviews"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,10 +29,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
+const PeopleDetails = ({ person }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
-
 
   return (
     <>
@@ -42,39 +40,40 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
       </Typography>
 
       <Typography variant="h6" component="p">
-        {tvShow.overview}
+        {person.overview}
       </Typography>
 
       <Paper component="ul" className={classes.root}>
         <li>
           <Chip label="Genres" className={classes.chip} color="primary" />
         </li>
-        {tvShow.genres.map((g) => (
+        {person.genres.map((g) => (
           <li key={g.name}>
             <Chip label={g.name} className={classes.chip} />
           </li>
         ))}
       </Paper>
       <Paper component="ul" className={classes.root}>
-        <Chip icon={<AccessTimeIcon />} label={`${tvShow.episode_run_time} min.`} />
-        <Chip icon={<PlusOneTwoToneIcon />}
-          label={`no of Seasons: ${tvShow.number_of_seasons.toLocaleString()}`}
+        {/* <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} /> */}
+        <Chip
+          icon={<MonetizationIcon />}
+        //   label={`${movie.revenue.toLocaleString()}`}
         />
         <Chip
           icon={<StarRate />}
-          label={`${tvShow.vote_average} (${tvShow.vote_count})`}
+        //   label={`${movie.vote_average} (${movie.vote_count}`}
         />
-        <Chip label={`Released: ${tvShow.first_air_date}`} />
+        {/* <Chip label={`Released: ${movie.release_date}`} /> */}
       </Paper>
       <Paper component="ul" className={classes.root}>
         <li>
           <Chip label="Production Countries" className={classes.chip} color="primary" />
         </li>
-        {tvShow.production_countries.map((pc) => (
+        {/* {movie.production_countries.map((pc) => (
           <li key={pc.name}>
             <Chip label={pc.name} className={classes.chip} />
           </li>
-        ))}
+        ))} */}
         </Paper>
 
         <Fab
@@ -86,11 +85,9 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
         <NavigationIcon />
         Reviews
       </Fab>
-      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <TvShowReviews tvShow={tvShow} />
-      </Drawer>
+      
     </>
   );
 };
 
-export default  TvShowDetails ;
+export default PeopleDetails ;

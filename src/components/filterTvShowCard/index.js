@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FilterMoviesCard(props) {
+export default function FilterTvShowsCard(props) {
   const classes = useStyles();
   const { data, error, isLoading, isError } = useQuery("genres", getGenres);
-  
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -41,6 +41,7 @@ export default function FilterMoviesCard(props) {
     return <h1>{error.message}</h1>;
   }
   const genres = data.genres;
+  console.log(genres);
   genres.unshift({ id: "0", name: "All" });
 
   const handleChange = (e, type, value) => {
@@ -61,7 +62,7 @@ export default function FilterMoviesCard(props) {
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
-          Filter the movies.
+          Filter the shows.
         </Typography>
         <TextField
           className={classes.formControl}
@@ -98,7 +99,7 @@ export default function FilterMoviesCard(props) {
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
-          Filter the movies.
+          Filter the shows.
           <br />
         </Typography>
       </CardContent>
