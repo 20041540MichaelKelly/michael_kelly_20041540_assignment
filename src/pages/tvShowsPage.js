@@ -2,12 +2,12 @@ import React from "react";
 import PageTemplate from "../components/templateTvShowListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
-import {getMostPopularTvShows} from '../api/tmdb-api'
+import {getKidsTvShows} from '../api/tmdb-api'
 //import AddToFavoritesIcon from '../components/cardIcons/addToFavourites'
 import PlaylistAddIcon from '../components/cardIcons/playlistTvShowAddIcon'
 
 const TvShowsPage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('tv', getMostPopularTvShows)
+  const {  data, error, isLoading, isError }  = useQuery('tv', getKidsTvShows)
 
   if (isLoading) {
     return <Spinner />

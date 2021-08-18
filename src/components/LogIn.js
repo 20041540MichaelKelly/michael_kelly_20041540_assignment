@@ -6,20 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import FilledInput from '@material-ui/core/FilledInput';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-
-import FormHelperText from '@material-ui/core/FormHelperText';
+import { Alert } from '@material-ui/lab';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,6 +28,17 @@ const useStyles = makeStyles((theme) => ({
       width: '25ch',
     },
   }));
+//   const [errorMessage, setErrorMessage] = React.useState("");
+//   const handleClick = () => {
+//     setErrorMessage("Example error message!")
+//   }
+//   return (
+//     <div className="App">
+//       <button onClick={handleClick}>Show error message</button>
+//       {errorMessage && <div className="error"> {errorMessage} </div>}
+//     </div>
+//   );
+
 
 
 const LogIn = () => {
@@ -44,10 +46,15 @@ const LogIn = () => {
     e.preventDefault();
     const { email, password } = e.target.elements;
     try{ 
-      firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value)
-    } catch (error){
-        alert(error)
-    }
+    firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value)
+    .catch(error => {   
+       alert(error.message);
+        <Alert severity="error">error</Alert>
+     })
+   }catch(err){
+    <Alert severity="error">error</Alert>
+     alert(err);
+   }
 
   };
   const classes = useStyles();

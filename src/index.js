@@ -25,6 +25,9 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 import TvShowsContextProvider from "./contexts/tvShowsContext";
 import loginHeader from "./components/loginHeader";
 import { TitleRounded } from "@material-ui/icons";
+import PeopleDetailsPage from "./pages/peopleDetailsPage";
+import PeoplePage from "./pages/peoplePage";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -61,7 +64,8 @@ const App = () => {
           
             {" "}
             <Switch>
-            
+                 <Route exact path="/person" component={PeopleDetailsPage}/>
+                 <Route path="/person/:id" component={PeoplePage} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/dashboard" component={Dashboard}/>
                 <Route exact path="/login" component={LogIn} />

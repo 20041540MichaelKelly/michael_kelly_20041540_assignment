@@ -33,9 +33,18 @@ export const getTvShows = async () => {
 };
 
 export const getMostPopularTvShows = async () => {
-  console.log('hi')
   const response = await fetch(
     `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&vote_average.gte=8`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  return response.json();
+};
+
+export const getKidsTvShows = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&genre_names=Sci-Fi %26 Fantasy&%26certification_country=US&page=1`
   );
   if (!response.ok) {
     throw new Error(response.json().message);
@@ -135,4 +144,41 @@ export const getTvShow = async ( args ) => {
         });
     };
   
-    
+ /**
+ **********People************
+ * */ 
+
+ export const getPeople = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  console.log(response)
+  return response.json();
+}; 
+
+export const getPerson = async ( args ) => {
+  // eslint-disable-next-line no-unused-vars
+  const [prefix, { id }] = args.queryKey;
+  const response = await fetch(
+    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  return response.json();
+};
+
+export const getPeopleImages = async ({queryKey}) => {
+    // eslint-disable-next-line no-unused-vars
+    const [prefix, { id }] = queryKey;
+    const response = await fetch(
+      `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+    if (!response.ok) {
+      throw new Error(response.json().message);
+    }
+    return response.json();
+  };

@@ -1,10 +1,10 @@
 import React from "react";  // useState/useEffect redundant 
-import TvShowHeader from "../headerTvShow";
+import PersonHeader from "../headerPerson";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import { getTvShowImages } from "../../api/tmdb-api";
+import { getPeopleImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
@@ -20,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TemplateTvShowPage = ({ tvShow, children }) => {
+const TemplatePeoplePage = ({ person, children }) => {
  
   const classes = useStyles();
   const { data , error, isLoading, isError } = useQuery(
-    ["images", { id: tvShow.id }],
-    getTvShowImages
+    ["images", { id: person.id }],
+    getPeopleImages
   );
-console.log(TemplateTvShowPage)
+console.log(TemplatePeoplePage)
   if (isLoading) {
     return <Spinner />;
   }
@@ -39,7 +39,7 @@ console.log(TemplateTvShowPage)
 
   return (
     <>
-      <TvShowHeader tvShow={tvShow} />
+      <PersonHeader person={person} />
 
       <Grid container spacing={5} style={{ padding: "15px" }}>
         <Grid item xs={3}>
@@ -65,4 +65,4 @@ console.log(TemplateTvShowPage)
   );
 };
 
-export default TemplateTvShowPage;
+export default TemplatePeoplePage;
