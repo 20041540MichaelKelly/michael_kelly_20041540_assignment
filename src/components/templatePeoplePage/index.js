@@ -27,7 +27,7 @@ const TemplatePeoplePage = ({ person, children }) => {
     ["images", { id: person.id }],
     getPeopleImages
   );
-console.log(TemplatePeoplePage)
+console.log('ppppperrrrson' + person.id)
   if (isLoading) {
     return <Spinner />;
   }
@@ -35,7 +35,8 @@ console.log(TemplatePeoplePage)
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  const images = data.posters 
+  const images = data.profiles 
+  console.log(images)
 
   return (
     <>
@@ -49,7 +50,7 @@ console.log(TemplatePeoplePage)
                 <GridListTile key={image.file_path} className={classes.gridListTile} cols={1}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
-                    alt={image.poster_path}
+                    alt={image.profile_path}
                   />
                 </GridListTile>
               ))}

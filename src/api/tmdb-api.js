@@ -21,8 +21,83 @@ export const getMovies = async () => {
   console.log(ans);
   return ans
 };
+  
+export const getMovie = async ( args ) => {
+  // eslint-disable-next-line no-unused-vars
+  const [prefix, { id }] = args.queryKey;
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  return response.json();
+};
 
-export const getTvShows = async () => {
+
+  
+  export const getGenres = async () => {
+    const response = await  fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
+        process.env.REACT_APP_TMDB_KEY +
+        "&language=en-US"
+    )
+    if (!response.ok) {
+      throw new Error(response.json().message);
+    }
+    return response.json();
+  };
+  
+  export const getMovieImages = async ({queryKey}) => {
+    // eslint-disable-next-line no-unused-vars
+    const [prefix, { id }] = queryKey;
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+    if (!response.ok) {
+      throw new Error(response.json().message);
+    }
+    return response.json();
+  };
+
+  export const getMovieReviews = (id) => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+         console.log(json.results);
+        return json.results;
+      });
+  };
+
+  export const getKidsMovies= async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&certification_country=US&certification=PG&sort_by=popularity.desc`
+      );
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    };
+
+    /**
+    ***********************Tv Shows ***********************************
+     */
+
+     export const getTvShow = async ( args ) => {
+  // eslint-disable-next-line no-unused-vars
+  const [prefix, { id }] = args.queryKey;
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  return response.json();
+};
+
+    export const getTvShows = async () => {
   const response = await fetch(
     `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
   );
@@ -51,56 +126,8 @@ export const getKidsTvShows = async () => {
   }
   return response.json();
 };
-  
-export const getMovie = async ( args ) => {
-  // eslint-disable-next-line no-unused-vars
-  const [prefix, { id }] = args.queryKey;
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
-  );
-  if (!response.ok) {
-    throw new Error(response.json().message);
-  }
-  return response.json();
-};
 
-export const getTvShow = async ( args ) => {
- // eslint-disable-next-line no-unused-vars
- const [prefix, { id }] = args.queryKey;
- const response = await fetch(
-   `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
- );
- if (!response.ok) {
-   throw new Error(response.json().message);
- }
- return response.json();
-};
-  
-  export const getGenres = async () => {
-    const response = await  fetch(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-        process.env.REACT_APP_TMDB_KEY +
-        "&language=en-US"
-    )
-    if (!response.ok) {
-      throw new Error(response.json().message);
-    }
-    return response.json();
-  };
-  
-  export const getMovieImages = async ({queryKey}) => {
-    // eslint-disable-next-line no-unused-vars
-    const [prefix, { id }] = queryKey;
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-    if (!response.ok) {
-      throw new Error(response.json().message);
-    }
-    return response.json();
-  };
-
-  export const getTvShowImages = async ({queryKey}) => {
+    export const getTvShowImages = async ({queryKey}) => {
     // eslint-disable-next-line no-unused-vars
     const [prefix, { id }] = queryKey;
     const response = await fetch(
@@ -112,26 +139,6 @@ export const getTvShow = async ( args ) => {
     return response.json();
   };
 
-  export const getMovieReviews = (id) => {
-    return fetch(
-      `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-         console.log(json.results);
-        return json.results;
-      });
-  };
-
-  export const getKidsMovies= async () => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&certification_country=US&certification=PG&sort_by=popularity.desc`
-      );
-      if (!response.ok) {
-        throw new Error(response.json().message);
-      }
-      return response.json();
-    };
 
     export const getTvShowReviews = (id) => {
       return fetch(
@@ -176,6 +183,22 @@ export const getPeopleImages = async ({queryKey}) => {
     const [prefix, { id }] = queryKey;
     const response = await fetch(
       `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+    if (!response.ok) {
+      throw new Error(response.json().message);
+    }
+    return response.json();
+};
+/**
+https://api.themoviedb.org/3/person/popular?api_key=0ac4bad22dc293db80db061a506a35f2&gender/1
+this will get all females
+ */
+
+export const getGender = async () => {
+    const response = await  fetch(
+      "https://api.themoviedb.org/3/gendre/person/list?api_key=" +
+        process.env.REACT_APP_TMDB_KEY +
+        "&language=en-US"
     )
     if (!response.ok) {
       throw new Error(response.json().message);
