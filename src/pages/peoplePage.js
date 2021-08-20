@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import PeopleDetails from "../components/peopleDetails";
 import PageTemplate from "../components/templatePeoplePage";
 //import useMovie from "../hooks/useMovie";
-import { getPerson } from '../api/tmdb-api'
+import { getPerson, getPersonMovieCredits } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
@@ -12,8 +12,12 @@ const PeoplePage = (props) => {
 
   const { data: person, error, isLoading, isError } = useQuery(
     ["person", { id: id }],
-    getPerson
+    getPerson, getPersonMovieCredits, 
   );
+
+  const {  data: cast }  = useQuery(
+    ["cast", { id: id }],
+    getPersonMovieCredits)
 
   if (isLoading) {
     return <Spinner />;
@@ -23,16 +27,18 @@ const PeoplePage = (props) => {
     return <h1>{error.message}</h1>;
   }
 
+  
   return (
+    
     <>
-      {person ? (
+      {person, cast ? (
         <>
           <PageTemplate person={person}>
-            <PeopleDetails person={person} />
+            <PeopleDetails person={person} cast={cast}/>
           </PageTemplate>
         </>
       ) : (
-        <p>Waiting for movie details</p>
+        <p>Waiting for person details</p>
       )}
     </>
   );

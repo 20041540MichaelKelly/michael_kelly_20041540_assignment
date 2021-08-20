@@ -36,7 +36,7 @@ const PersonHeader = ( { person, history}) => {
           <HomeIcon color="primary" />
         </a>
         <br />
-        <span className={classes.tagLine}>{`   "${person.tagline}"`} </span>
+        
       </Typography>
       <IconButton aria-label="go forward" onClick={() => history.goForward() } >
         <ArrowForwardIcon color="primary" fontSize="large" />

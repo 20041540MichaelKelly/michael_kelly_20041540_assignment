@@ -29,10 +29,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PeopleDetails = ({ person }) => {  // Don't miss this!
+const PeopleDetails = ({ person, cast }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
+console.log(person)
+console.log(cast)
 
+    
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -45,13 +48,17 @@ const PeopleDetails = ({ person }) => {  // Don't miss this!
 
       <Paper component="ul" className={classes.root}>
         <li>
-          <Chip label="Genres" className={classes.chip} color="primary" />
+          <Chip label="Films Involved in" className={classes.chip} color="primary" />
         </li>
-        {/* {person.genres.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} className={classes.chip} />
-          </li>
-        ))} */}
+        <li>
+        {cast.cast.map((g) => (
+          <ul key={g.title}>
+            <Chip label={g.title} className={classes.chip} />
+            <Chip label={g.vote_average} className={classes.chip} />
+          </ul>
+        ))}
+          {/* <Chip label={person.place_of_birth} className={classes.chip} /> */}
+        </li>
       </Paper>
       <Paper component="ul" className={classes.root}>
         {/* <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} /> */}
@@ -61,7 +68,7 @@ const PeopleDetails = ({ person }) => {  // Don't miss this!
         />
         <Chip
           icon={<StarRate />}
-        //   label={`${movie.vote_average} (${movie.vote_count}`}
+          label={`${cast.cast[0].vote_average} (${cast.cast[0].vote_count})`}
         />
         {/* <Chip label={`Released: ${movie.release_date}`} /> */}
       </Paper>

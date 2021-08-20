@@ -20,14 +20,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TemplatePeoplePage = ({ person, children }) => {
- 
+const TemplatePeoplePage = ({ person, cast, children }) => {
+ console.log(cast)
   const classes = useStyles();
   const { data , error, isLoading, isError } = useQuery(
     ["images", { id: person.id }],
     getPeopleImages
   );
-console.log('ppppperrrrson' + person.id)
+
+  
+
   if (isLoading) {
     return <Spinner />;
   }
