@@ -14,8 +14,8 @@ export default {
 //TODO: a lot of work to be done here
 export const Basic = () => {
   return (
-    <TvCard
-      tvShow={SampleMovie}
+    <PeopleCard
+      person={SamplePerson}
       action={(tvShow) => <AddToFavoritesIcon tvShow={tvShow} />}
       taging={(tvShow) => null}
     />
