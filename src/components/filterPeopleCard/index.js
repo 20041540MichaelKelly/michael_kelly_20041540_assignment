@@ -11,7 +11,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg'
-import { getGenres } from "../../api/tmdb-api";
+import { getGender } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FilterPeopleCard(props) {
   const classes = useStyles();
-  const { data, error, isLoading, isError } = useQuery("genres", getGenres);
+  const { data, error, isLoading, isError } = useQuery("gender", getGender);
   
   if (isLoading) {
     return <Spinner />;
@@ -40,8 +40,8 @@ export default function FilterPeopleCard(props) {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  const genres = data.genres;
-  genres.unshift({ id: "0", name: "All" });
+  const gender = data.gender;
+  gender.unshift({ id: "0", name: "All" });
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ export default function FilterPeopleCard(props) {
   };
 
   const handleGenreChange = (e) => {
-    handleChange(e, "genre", e.target.value);
+    handleChange(e, "gender", e.target.value);
   };
 
   return (
@@ -73,17 +73,17 @@ export default function FilterPeopleCard(props) {
           onChange={handleTextChange}
         />
         <FormControl className={classes.formControl}>
-          <InputLabel id="genre-label">Genre</InputLabel>
+          <InputLabel id="gender-label">Gender</InputLabel>
           <Select
-            labelId="genre-label"
-            id="genre-select"
-            value={props.genreFilter}
+            labelId="gender-label"
+            id="gender-select"
+            value={props.genderFilter}
             onChange={handleGenreChange}
           >
-            {genres.map((genre) => {
+            {gender.map((gen) => {
               return (
-                <MenuItem key={genre.id} value={genre.id}>
-                  {genre.name}
+                <MenuItem key={gen.id} value={gen.id}>
+                  {gen.name}
                 </MenuItem>
               );
             })}

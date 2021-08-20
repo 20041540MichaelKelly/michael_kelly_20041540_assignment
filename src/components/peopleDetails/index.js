@@ -40,18 +40,18 @@ const PeopleDetails = ({ person }) => {  // Don't miss this!
       </Typography>
 
       <Typography variant="h6" component="p">
-        {person.overview}
+        {person.biography}
       </Typography>
 
       <Paper component="ul" className={classes.root}>
         <li>
           <Chip label="Genres" className={classes.chip} color="primary" />
         </li>
-        {person.genres.map((g) => (
+        {/* {person.genres.map((g) => (
           <li key={g.name}>
             <Chip label={g.name} className={classes.chip} />
           </li>
-        ))}
+        ))} */}
       </Paper>
       <Paper component="ul" className={classes.root}>
         {/* <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} /> */}
