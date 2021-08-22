@@ -40,6 +40,7 @@ const SiteHeader = ( { history }) => {
   const menuTvOptions = [
     { label: "TvShows", path: "/tv" },
     { label: "Popular", path: "/tv/popular" },
+    { label: "Tv Watchlist", path: "/tv/watchlist"}
     
   ];
 

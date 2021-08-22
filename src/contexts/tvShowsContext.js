@@ -25,7 +25,7 @@ const TvShowsContextProvider = (props) => {
     setWatchlist([...watchlist,tvShow.id])
   };
   // We will use this function in a later section
-  const removeFromWatchlist = (tvShow) => {
+  const removeTvShowFromWatchlist = (tvShow) => {
     setWatchlist( watchlist.filter(
       (mId) => mId !== tvShow.id
     ) )
@@ -40,7 +40,7 @@ const TvShowsContextProvider = (props) => {
         removeFromFavorites,
         addReview,
         addToWatchlist,
-        removeFromWatchlist,
+        removeTvShowFromWatchlist,
       }}
     >
       {props.children}

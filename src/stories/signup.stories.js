@@ -14,6 +14,6 @@ export default {
   ],
 };
 
- export const Basic = () => <Signup user={SampleUser} />;
+export const Basic = () => <Signup user={SampleUser} />;
 
 Basic.storyName = "Default";

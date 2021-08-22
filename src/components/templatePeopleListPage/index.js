@@ -43,7 +43,7 @@ function PeopleListPageTemplate({ people, name}) {
           <FilterCard
             onUserInput={handleChange}
             titleFilter={nameFilter}
-            genreFilter={genderFilter}
+            genderFilter={genderFilter}
           />
         </Grid>
         <PeopleList people={displayedPeople}></PeopleList>

@@ -10,7 +10,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import { Alert } from '@material-ui/lab';
+import { Alert } from "@material-ui/lab";
+import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,15 +28,8 @@ const useStyles = makeStyles((theme) => ({
     },
     textField: {
       width: '25ch',
-    },
+    }
   }));
-  // const errorMessage = '' 
-  // const handleClick = () => {
-  //   errorMessage"Example error message!")
-  // }
-  
-
-
 
 const LogIn = () => {
   const handleSubmit = (e) => {
@@ -42,12 +37,11 @@ const LogIn = () => {
     const { email, password } = e.target.elements;
     try{ 
     firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value)
-    .catch(error => {   
-       alert(error.message);
+    .catch(error => {
+      alert(error.message);   
         
      })
    }catch(err){
-    <Alert severity="error">error</Alert>
      alert(err);
    }
 
@@ -56,6 +50,7 @@ const LogIn = () => {
 
   const { currentUser } = useContext(AuthContext);
   if (currentUser) {
+    <Alert success = "Logged In"></Alert>
     return <Redirect to="/movies" />;
   }
 
@@ -72,18 +67,17 @@ const LogIn = () => {
           type="email" name="email" placeholder="Email"
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <EmailIcon />
             </InputAdornment>
           }
         />
-        
         <InputLabel htmlFor="input-with-icon-adornment">Password</InputLabel>
         <Input
           id="input-with-icon-adornment"
           type="password" name="password" required
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <LockIcon />
             </InputAdornment>
           }
         />

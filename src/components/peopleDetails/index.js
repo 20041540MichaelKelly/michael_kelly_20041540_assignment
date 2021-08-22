@@ -53,8 +53,8 @@ console.log(cast)
         <li>
         {cast.cast.map((g) => (
           <ul key={g.title}>
-            <Chip label={g.title} className={classes.chip} />
-            <Chip label={g.vote_average} className={classes.chip} />
+            <li><Chip label={g.title} className={classes.chip} />
+            <Chip label={g.vote_average} className={classes.chip} /></li>
           </ul>
         ))}
           {/* <Chip label={person.place_of_birth} className={classes.chip} /> */}

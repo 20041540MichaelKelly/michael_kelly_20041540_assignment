@@ -26,6 +26,7 @@ import TvShowsContextProvider from "./contexts/tvShowsContext";
 import { TitleRounded } from "@material-ui/icons";
 import PeopleDetailsPage from "./pages/peopleDetailsPage";
 import PeoplePage from "./pages/peoplePage";
+import WatchlistTvShowsPage from "./pages/watchlistTvShowPage";
 
 
 const queryClient = new QueryClient({
@@ -69,6 +70,7 @@ const App = () => {
                 <Route exact path="/login" component={LogIn} />
                 <Route exact path="/dashbord" component={Dashboard} />
                 <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/tv/watchlist" component={WatchlistTvShowsPage} />
                 <Route exact path="/tv/popular" component={PopularTvShowsPage} />
                 <Route exact path="/tv" component={TvShowsPage} />
                 <Route path="/tv/:id" component={TvShowsDetailsPage} />
@@ -80,6 +82,8 @@ const App = () => {
                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
+                <Redirect from="/movies/page/1" to="/movies" />
+                <Route exact path="/movies/page/:pageNumber" component={HomePage}/>
                 <Route exact path="/movies" component={HomePage}/>
                 
 

@@ -15,8 +15,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import FilledInput from '@material-ui/core/FilledInput';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
+import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
 
 
 
@@ -90,7 +90,7 @@ const SignUp = () => {
           type="email" name="email" placeholder="Email"
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <EmailIcon />
             </InputAdornment>
           }
         />
@@ -101,7 +101,7 @@ const SignUp = () => {
           type="password" name="password"
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <LockIcon />
             </InputAdornment>
           }
         />

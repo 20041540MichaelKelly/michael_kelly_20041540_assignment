@@ -7,6 +7,7 @@ import { getPerson, getPersonMovieCredits } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
+
 const PeoplePage = (props) => {
   const { id } = props.match.params
 
