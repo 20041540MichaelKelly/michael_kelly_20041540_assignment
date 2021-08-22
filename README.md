@@ -1,23 +1,41 @@
 # Assignment - ReactJS app.
 
-Name: ... your name ...
+Name: Michael Kelly your name 20041540
 
 ## Overview.
 
 ...... State the app concept and objectives. If it's the Movies Fan app extension, only state the additional objectives .........
 
+The additional objectives for the Movies App I eloberated on. Is to implement the tv show section
+that will have a watch list feature, The movie list has the favourites feature. The the user will be able to filter tv shows etc. Also I have implemented a login system, that uses FireBase authenthication and Database. Also a popular people section where the user can see there images and then click into view there biography. Also it displays their birthdays and all the movies that they have appeared in. I am going for full storybook support also, so overall i am attempting to tick the box's required.
+
 
 ...... A bullet-point list of user features. If it's the Movies Fan app extension, only list new/modified features...... 
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Tv Show list
+ + Tv Show Watchlist
+ + Tv Show Reviews
+ + Tv Show Details
+ + Login
+ + Sign Up
+ + Sign Out
+ + FireBase
+ + More StoryBook Support
+ + Original component and page designs
+
+
 
 ## Setup requirements.
 
 ...... A brief explanation (to a third party) of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
+The setup require ments for third party Database and authentication React FireBase, 
+follow these steps:
+1. Create an account in Firebase
+2. Then you can create project.
+3. From their you will be giving credientials.
+4. create a file called test-credientials.js
+5. enter the credientials you copied form FireBase.
+6. The firebase should be then imported in the component your using it in.
 
 ## API Data Model.
 

@@ -31,21 +31,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FilterPeopleCard(props) {
   const classes = useStyles();
-  const { data, error, isLoading, isError } = useQuery("gender", getGender);
+  //const { data, error, isLoading, isError } = useQuery("gender", getGender);
 
-  const gender = [
-    {id: 1, name: "Female"},
-    {id: 2, name: "Male"},
-    {id: 3, name: "Other"}
-  ]
   
-  if (isLoading) {
-    return <Spinner />;
-  }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
-  if (isError) {
-    return <h1>{error.message}</h1>;
-  }
+  // if (isError) {
+  //   return <h1>{error.message}</h1>;
+  // }
   // const gender = data.gender;
   // gender.unshift({ id: "0", name: "All" });
 
@@ -56,10 +51,6 @@ export default function FilterPeopleCard(props) {
 
   const handleTextChange = (e, props) => {
     handleChange(e, "name", e.target.value);
-  };
-
-  const handleGenderChange = (e) => {
-    handleChange(e, "gender", e.target.value);
   };
 
   return (
@@ -78,21 +69,6 @@ export default function FilterPeopleCard(props) {
           variant="filled"
           onChange={handleTextChange}
         />
-        <FormControl className={classes.formControl}>
-          <InputLabel id="genre-label">Genre</InputLabel>
-          <Select
-            labelId="genre-label"
-            id="genre-select"
-          >
-            {gender.map((gen) => {
-              return (
-                <MenuItem key={gen.id} value={gen.id}>
-                  {gen.name}
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
       </CardContent>
       <CardMedia
         className={classes.media}

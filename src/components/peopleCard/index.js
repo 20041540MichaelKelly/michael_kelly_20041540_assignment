@@ -44,12 +44,12 @@ let popVote = Math.round(person.popularity);
       />
       <CardContent>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <Typography variant="h6" component="p">
               <EmojiEmotionsIcon fontSize="small" />
               {"  "} {person.known_for.map((g) => (
-          <li key={g.id}>
-            {g.original_title} {g.media_type}
+          <li key={g.original_title}>
+            {g.original_title ? g.original_title : g.title }
           </li>
         ))} {"  "}
             </Typography>
