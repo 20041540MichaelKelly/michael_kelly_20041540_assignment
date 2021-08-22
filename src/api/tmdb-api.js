@@ -194,12 +194,12 @@ https://api.themoviedb.org/3/person/popular?api_key=0ac4bad22dc293db80db061a506a
 this will get all females
  */
 
-export const getGender = async () => {
-    const response = await  fetch(
-      "https://api.themoviedb.org/3/gendre/person/list?api_key=" +
-        process.env.REACT_APP_TMDB_KEY +
-        "&language=en-US"
-    )
+  export const getPersonMovieCredits = async ( args ) => {
+    // eslint-disable-next-line no-unused-vars
+    const [prefix, { id }] = args.queryKey;
+    const response = await fetch(
+      `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    );
     if (!response.ok) {
       throw new Error(response.json().message);
     }

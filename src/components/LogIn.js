@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "./Auth";
-import firebaseConfig from "../test-credentials";
+import firebaseConfig,  { signInWithGoogle }  from "../test-credentials";
 import { makeStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import { Alert } from '@material-ui/lab';
+import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
+import Snackbar from "@material-ui/core/Snackbar"; 
+import MuiAlert from "@material-ui/lab/Alert";
+import { Typography } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,49 +31,66 @@ const useStyles = makeStyles((theme) => ({
     textField: {
       width: '25ch',
     },
+    snack: {
+      width: "50%",
+      "& > * ": {
+        width: "100%",
+      },
+    },
   }));
-//   const [errorMessage, setErrorMessage] = React.useState("");
-//   const handleClick = () => {
-//     setErrorMessage("Example error message!")
-//   }
-//   return (
-//     <div className="App">
-//       <button onClick={handleClick}>Show error message</button>
-//       {errorMessage && <div className="error"> {errorMessage} </div>}
-//     </div>
-//   );
 
-
-
+   
 const LogIn = () => {
+  const [open, setOpen] = React.useState(false);  //NEW
+  
+  const handleSnackClose = (event) => {  
+    setOpen(false);
+  };   
+  
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     const { email, password } = e.target.elements;
-    try{ 
+    
     firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value)
-    .catch(error => {   
-       alert(error.message);
-        <Alert severity="error">error</Alert>
-     })
-   }catch(err){
-    <Alert severity="error">error</Alert>
-     alert(err);
-   }
-
+    .catch(function (error) {
+      setOpen(true);
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("error" + error);
+    })
+    
+  
   };
   const classes = useStyles();
 
   const { currentUser } = useContext(AuthContext);
   if (currentUser) {
-    return <Redirect to="/dashboard" />;
+    
+    return <Redirect to="/movies" />;
   }
-
+ 
   return (
     <>
-     <Card className={classes.root}>
+    <Typography><h1>Welcome to TMDB</h1></Typography>
+    <Card className={classes.root}>
+    <Snackbar
+        className={classes.snack}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={open}
+        onClose={handleSnackClose}
+      >
+        <MuiAlert
+          severity="error"
+          variant="filled"
+          onClose={handleSnackClose}
+        >
+         <h2>Incorrect User Input</h2>
+        </MuiAlert>
+      </Snackbar>
      <CardContent>
       <h1>Log In</h1>
-     
       <form onSubmit={handleSubmit}>
       <InputLabel htmlFor="input-with-icon-adornment">Email</InputLabel>
         <Input
@@ -77,18 +98,17 @@ const LogIn = () => {
           type="email" name="email" placeholder="Email"
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <EmailIcon />
             </InputAdornment>
           }
         />
-        
         <InputLabel htmlFor="input-with-icon-adornment">Password</InputLabel>
         <Input
           id="input-with-icon-adornment"
           type="password" name="password" required
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <LockIcon />
             </InputAdornment>
           }
         />

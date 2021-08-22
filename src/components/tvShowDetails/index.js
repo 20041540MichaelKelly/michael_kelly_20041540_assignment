@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  console.log(tvShow)
 
 
   return (
@@ -50,7 +51,7 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
           <Chip label="Genres" className={classes.chip} color="primary" />
         </li>
         {tvShow.genres.map((g) => (
-          <li key={g.name}>
+          <li key={g.id}>
             <Chip label={g.name} className={classes.chip} />
           </li>
         ))}
@@ -71,7 +72,7 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
           <Chip label="Production Countries" className={classes.chip} color="primary" />
         </li>
         {tvShow.production_countries.map((pc) => (
-          <li key={pc.name}>
+          <li key={pc.id}>
             <Chip label={pc.name} className={classes.chip} />
           </li>
         ))}

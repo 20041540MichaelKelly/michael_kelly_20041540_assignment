@@ -2,12 +2,16 @@ import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "./Auth";
 import firebaseConfig from "../test-credentials";
+import { Alert } from "@material-ui/lab";
 
 const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
+  console.log(currentUser)
   if (!currentUser) {
-    return <Redirect to="/login" />;
+    Alert('You are not user');
+    return <Redirect to="/" />;
   }
+  
   return (
     <div>
       <h1>Welcome</h1>

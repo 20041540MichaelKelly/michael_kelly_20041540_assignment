@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
 import {getMostPopularTvShows} from '../api/tmdb-api'
 //import AddToFavoritesIcon from '../components/cardIcons/addToFavourites'
-import PlaylistAddIcon from '../components/cardIcons/playlistAddIcon'
+import PlaylistAddIcon from '../components/cardIcons/playlistTvShowAddIcon'
 
 const PopularTvShowsPage = (props) => {
   const {  data, error, isLoading, isError }  = useQuery('popular', getMostPopularTvShows)

@@ -7,14 +7,11 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardHeader from "@material-ui/core/CardHeader";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PlaylistIcon from "@material-ui/icons/PlaylistAddCheck";
-import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
+import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import Grid from "@material-ui/core/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
-import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
@@ -25,8 +22,8 @@ const useStyles = makeStyles({
 });
 
 export default function PeopleCard( {person}) {
-  const classes = useStyles();
-console.log('person' + person)
+const classes = useStyles();
+let popVote = Math.round(person.popularity);
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -47,16 +44,20 @@ console.log('person' + person)
       />
       <CardContent>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              {/* {movie.release_date} */}
+              <EmojiEmotionsIcon fontSize="small" />
+              {"  "} {person.known_for.map((g) => (
+          <li key={g.original_title}>
+            {g.original_title ? g.original_title : g.title }
+          </li>
+        ))} {"  "}
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {/* {"  "} {movie.vote_average}{" "} */}
+              {"  "} {popVote}{"% "}
             </Typography>
           </Grid>
         </Grid>
@@ -65,7 +66,7 @@ console.log('person' + person)
         {/* {action(person)} */}
         <Link to={`/person/${person.id}`}>
           <Button variant="outlined" size="medium" color="primary">
-            More Info ...
+            Bio ...
           </Button>
         </Link>
       </CardActions>

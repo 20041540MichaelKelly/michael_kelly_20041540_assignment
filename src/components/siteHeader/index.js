@@ -29,7 +29,7 @@ const SiteHeader = ( { history }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuOptions = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/movies" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Kids Movies", path: "/movies/kids" },
     { label: "Upcoming Movies", path: "/movies/upcoming" },
@@ -40,6 +40,7 @@ const SiteHeader = ( { history }) => {
   const menuTvOptions = [
     { label: "TvShows", path: "/tv" },
     { label: "Popular", path: "/tv/popular" },
+    { label: "Tv Watchlist", path: "/tv/watchlist"}
     
   ];
 
@@ -95,26 +96,40 @@ const SiteHeader = ( { history }) => {
                       {opt.label}
                     </MenuItem>
                   ))}
-                </Menu>
-              </>
-            ) : (
-              <>
-              {menuTvOptions.map((opt) => (
-                  <Button
+                  {menuTvOptions.map((opt) => (
+                  <MenuItem
                     key={opt.label}
                     color="inherit"
                     onClick={() => handleMenuSelect(opt.path)}
                   >
                     {opt.label} 
-                  </Button>
+                  </MenuItem>
+                  ))}
+                   <MenuItem 
+                   color="inherit"
+                   onClick={() => firebaseConfig.auth().signOut()} 
+                   >
+                     <Link to="/">Sign out</Link>
+                   </MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <>
+              {menuTvOptions.map((opt) => (
+                  <MenuItem
+                    key={opt.label}
+                    color="inherit"
+                    onClick={() => handleMenuSelect(opt.path)}
+                  >
+                    {opt.label} 
+                  </MenuItem>
                 ))}
-                <Button 
-                color="inherit"
-                onClick={() => firebaseConfig.auth().signOut()} 
-                >
-                  <Link to="/login">Sign out</Link>
-                  
-                </Button>
+                <Button
+                    color="inherit"
+                    onClick={() => handleMenuSelect("/person")}
+                  >
+                    Popular People 
+                  </Button>
 
               <Button
                   aria-label="menu"
@@ -124,6 +139,12 @@ const SiteHeader = ( { history }) => {
                   color="inherit"
                 >
                   Movies
+                </Button>
+                <Button
+                color="inherit"
+                onClick={() => firebaseConfig.auth().signOut() && handleMenuSelect("/home")}
+                >
+                  Sign out
                 </Button>
                 <Menu
                   id="menu-appbar"

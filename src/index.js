@@ -23,10 +23,10 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import TvShowsContextProvider from "./contexts/tvShowsContext";
-import loginHeader from "./components/loginHeader";
 import { TitleRounded } from "@material-ui/icons";
 import PeopleDetailsPage from "./pages/peopleDetailsPage";
 import PeoplePage from "./pages/peoplePage";
+import WatchlistTvShowsPage from "./pages/watchlistTvShowPage";
 
 
 const queryClient = new QueryClient({
@@ -44,7 +44,7 @@ const queryClient = new QueryClient({
 function ChangeTitle()  {
   const location = useLocation();
   console.log(location);
-  if(location.pathname == '/login' || location.pathname == '/signup'){
+  if(location.pathname == '/login' || location.pathname == '/signup' || location.pathname == '/'){
       return <LoginHeader />
 }else{
        return <SiteHeader /> 
@@ -64,12 +64,13 @@ const App = () => {
           
             {" "}
             <Switch>
-                 <Route exact path="/person" component={PeopleDetailsPage}/>
-                 <Route path="/person/:id" component={PeoplePage} />
+                <Route exact path="/person" component={PeopleDetailsPage}/>
+                <Route path="/person/:id" component={PeoplePage} />
                 <Route exact path="/" component={Home} />
-                <Route exact path="/dashboard" component={Dashboard}/>
                 <Route exact path="/login" component={LogIn} />
+                <Route exact path="/dashbord" component={Dashboard} />
                 <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/tv/watchlist" component={WatchlistTvShowsPage} />
                 <Route exact path="/tv/popular" component={PopularTvShowsPage} />
                 <Route exact path="/tv" component={TvShowsPage} />
                 <Route path="/tv/:id" component={TvShowsDetailsPage} />
@@ -81,6 +82,9 @@ const App = () => {
                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
+                <Redirect from="/movies/page/1" to="/movies" />
+                <Route exact path="/movies/page/:pageNumber" component={HomePage}/>
+                <Route exact path="/movies" component={HomePage}/>
                 
 
                 {/* <Route exact path="/" component={AnonymousAuthPage} /> */}

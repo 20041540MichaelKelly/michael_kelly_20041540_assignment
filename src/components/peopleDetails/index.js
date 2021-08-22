@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import MonetizationIcon from "@material-ui/icons/MonetizationOn";
+import CakeIcon from '@material-ui/icons/Cake';
 import StarRate from "@material-ui/icons/StarRate";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PeopleDetails = ({ person }) => {  // Don't miss this!
+const PeopleDetails = ({ person, cast }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
-
+    
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -45,36 +45,30 @@ const PeopleDetails = ({ person }) => {  // Don't miss this!
 
       <Paper component="ul" className={classes.root}>
         <li>
-          <Chip label="Genres" className={classes.chip} color="primary" />
+          <Chip label="Films Involved in" className={classes.chip} color="primary" />
         </li>
-        {/* {person.genres.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} className={classes.chip} />
+        {cast.cast.map((g) => (
+          <li key={g.title}>
+            <Chip label={g.title} className={classes.chip} />
+            {/* <Chip label={g.vote_average} className={classes.chip} "/10" /> */}
           </li>
-        ))} */}
+        ))}
+          {/* <Chip label={person.place_of_birth} className={classes.chip} /> */}
+       
       </Paper>
       <Paper component="ul" className={classes.root}>
         {/* <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} /> */}
         <Chip
-          icon={<MonetizationIcon />}
-        //   label={`${movie.revenue.toLocaleString()}`}
+          icon={<CakeIcon />}
+           label={`${person.birthday}`}
         />
         <Chip
           icon={<StarRate />}
-        //   label={`${movie.vote_average} (${movie.vote_count}`}
+          label={`${cast.cast[0].vote_average} (${cast.cast[0].vote_count})`}
         />
         {/* <Chip label={`Released: ${movie.release_date}`} /> */}
       </Paper>
-      <Paper component="ul" className={classes.root}>
-        <li>
-          <Chip label="Production Countries" className={classes.chip} color="primary" />
-        </li>
-        {/* {movie.production_countries.map((pc) => (
-          <li key={pc.name}>
-            <Chip label={pc.name} className={classes.chip} />
-          </li>
-        ))} */}
-        </Paper>
+      
 
         <Fab
         color="secondary"

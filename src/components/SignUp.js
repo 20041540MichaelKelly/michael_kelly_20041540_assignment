@@ -5,18 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import FilledInput from '@material-ui/core/FilledInput';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
+import EmailIcon from '@material-ui/icons/Email';
+import LockIcon from '@material-ui/icons/Lock';
+import { Typography } from "@material-ui/core";
 
 
 
@@ -52,13 +47,12 @@ const SignUp = () => {
   const classes = useStyles();
 
   if (currentUser) {
-      return <Redirect to="/dashboard" />;
+      return <Redirect to="/movies" />;
   }
-
-  
+ 
   return (
-    
     <>
+    <Typography><h1>Please join us</h1></Typography>
     <Card className={classes.root}>
      <CardContent>
       <h1>Sign Up</h1>
@@ -90,7 +84,7 @@ const SignUp = () => {
           type="email" name="email" placeholder="Email"
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <EmailIcon />
             </InputAdornment>
           }
         />
@@ -101,7 +95,7 @@ const SignUp = () => {
           type="password" name="password"
           startAdornment={
             <InputAdornment position="start">
-              <AccountCircle />
+              <LockIcon />
             </InputAdornment>
           }
         />
