@@ -5,9 +5,11 @@ import firebaseConfig from "../test-credentials";
 
 const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
+  console.log(currentUser)
   if (!currentUser) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
+  
   return (
     <div>
       <h1>Welcome</h1>

@@ -32,6 +32,12 @@ const useStyles = makeStyles((theme) => ({
 export default function FilterPeopleCard(props) {
   const classes = useStyles();
   const { data, error, isLoading, isError } = useQuery("gender", getGender);
+
+  const gender = [
+    {id: 1, name: "Female"},
+    {id: 2, name: "Male"},
+    {id: 3, name: "Other"}
+  ]
   
   if (isLoading) {
     return <Spinner />;
@@ -40,8 +46,8 @@ export default function FilterPeopleCard(props) {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  const gender = data.gender;
-  gender.unshift({ id: "0", name: "All" });
+  // const gender = data.gender;
+  // gender.unshift({ id: "0", name: "All" });
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
@@ -52,7 +58,7 @@ export default function FilterPeopleCard(props) {
     handleChange(e, "name", e.target.value);
   };
 
-  const handleGenreChange = (e) => {
+  const handleGenderChange = (e) => {
     handleChange(e, "gender", e.target.value);
   };
 
@@ -73,12 +79,10 @@ export default function FilterPeopleCard(props) {
           onChange={handleTextChange}
         />
         <FormControl className={classes.formControl}>
-          <InputLabel id="gender-label">Gender</InputLabel>
+          <InputLabel id="genre-label">Genre</InputLabel>
           <Select
-            labelId="gender-label"
-            id="gender-select"
-            value={props.genderFilter}
-            onChange={handleGenreChange}
+            labelId="genre-label"
+            id="genre-select"
           >
             {gender.map((gen) => {
               return (

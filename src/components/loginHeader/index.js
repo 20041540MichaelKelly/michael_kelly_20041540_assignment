@@ -31,7 +31,7 @@ const SiteHeader = ( { history }) => {
   const menuOptions = [
     { label: "Login", path: "/login" },
     { label: "Sign Up", path: "/signup" },
-    // { label: "TvShows", path: "/tv" },
+   //{ label: "Home", path: "/" },
   ];
 
   const handleMenuSelect = (pageURL) => {

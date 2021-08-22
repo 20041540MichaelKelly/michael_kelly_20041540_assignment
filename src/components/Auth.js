@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import firebaseConfig from "../test-credentials";
+import Spinner from '../components/spinner'
 
 export const AuthContext = React.createContext();
 
@@ -13,7 +14,8 @@ export const AuthProvider = ({ children }) => {
     });
   }, []);
   if (loading) {
-    return <p>Loading...</p>;
+   // return <p>Loading...</p>;
+   return <Spinner />
   }
   return (
     <AuthContext.Provider value={{ currentUser }}>

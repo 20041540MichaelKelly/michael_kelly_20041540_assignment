@@ -48,8 +48,8 @@ let popVote = Math.round(person.popularity);
             <Typography variant="h6" component="p">
               <EmojiEmotionsIcon fontSize="small" />
               {"  "} {person.known_for.map((g) => (
-          <li key={g.title}>
-            {g.title}
+          <li key={g.id}>
+            {g.original_title} {g.media_type}
           </li>
         ))} {"  "}
             </Typography>
