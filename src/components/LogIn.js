@@ -28,16 +28,11 @@ const useStyles = makeStyles((theme) => ({
       width: '25ch',
     },
   }));
-//   const [errorMessage, setErrorMessage] = React.useState("");
-//   const handleClick = () => {
-//     setErrorMessage("Example error message!")
-//   }
-//   return (
-//     <div className="App">
-//       <button onClick={handleClick}>Show error message</button>
-//       {errorMessage && <div className="error"> {errorMessage} </div>}
-//     </div>
-//   );
+  // const errorMessage = '' 
+  // const handleClick = () => {
+  //   errorMessage"Example error message!")
+  // }
+  
 
 
 
@@ -49,7 +44,7 @@ const LogIn = () => {
     firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value)
     .catch(error => {   
        alert(error.message);
-        <Alert severity="error">error</Alert>
+        
      })
    }catch(err){
     <Alert severity="error">error</Alert>

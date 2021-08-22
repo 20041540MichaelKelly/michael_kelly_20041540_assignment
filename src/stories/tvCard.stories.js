@@ -1,6 +1,6 @@
 import React from "react";
 import TvCard from "../components/tvCard";
-import SampleMovie from "./sampleData";
+import SampleTvShow from "./sampleTvShowData";
 import { MemoryRouter } from "react-router";
 import TvShowsContextProvider from "../contexts/tvShowsContext";
 import { action } from "@storybook/addon-actions";
@@ -18,7 +18,7 @@ export default {
 export const Basic = () => {
   return (
     <TvCard
-      tvShow={SampleMovie}
+      tvShow={SampleTvShow}
       action={(tvShow) => <AddToFavoritesIcon tvShow={tvShow} />}
       taging={(tvShow) => null}
     />
@@ -27,10 +27,10 @@ export const Basic = () => {
 Basic.storyName = "Default";
 
 export const Exceptional = () => {
-  const sampleNoPoster = { ...SampleMovie, poster_path: undefined };
+  const sampleNoPoster = { ...SampleTvShow, poster_path: undefined };
   return (
     <TvCard
-      movie={sampleNoPoster}
+      tvShow={sampleNoPoster}
       action={(tvShow) => <AddToFavoritesIcon tvShow={tvShow} />}
       taging={(tvShow) => null}
     />
