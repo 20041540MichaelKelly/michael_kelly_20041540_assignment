@@ -1195,43 +1195,56 @@ people images
 <img src="./storybookCatalogue.PNG"" />
 
 ![][stories]
+>This is the story book catalogue covers about 90 %
 
 ### UI Design.
 
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
 
-<img src="./ss1.PNG"" />
+![][ss1]
 in the login page an error will diplay if wrong login, but if correct you can go to the movies, tv shows people.
-
-<img src="./ss2.PNG"" />
+![][ss2]
 You can sign up and become authenticated by FireBase DB
-<img src="./ss3.PNG"" />
+![][ss3]
 The movie page now have kids and watchlist and review section
-<img src="./ss4.PNG"" />
+![][ss4]
 >The tvShow selection with filter and watchlist and you can click to see overview
-<img src="./ss5.PNG"" />
-
+![][ss5]
+>the overview of a tv show
 ![][ss6]
 >This is the people overview and you click to see bio
 
-![][view]
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
 
 ### Routing.
 
 ...... Insert a list of the routes supported by your app and state the associated view. If relevant, specify which of the routes require authentication, i.e. protected/private. [For the Movies Fan app, only new routes should be listed.] ......... 
 
-+ GET /blogs - displays all published blogs.
-+ POST /blogs (protected) - add a new blog.
-+ GET /blogs/:id - displays a particular blog.
-+ GET /blogs/:id/comments (protected) - detail view of a particular blog and its comments.
-+ etc.
-+ etc.
++<Route exact path="/person" component={PeopleDetailsPage}/>
++<Route path="/person/:id" component={PeoplePage} />
++<Route exact path="/" component={Home} />
++<Route exact path="/login" component={LogIn} />
++<Route exact path="/dashbord" component={Dashboard} />
++<Route exact path="/signup" component={SignUp} />
++<Route exact path="/tv/watchlist" component={WatchlistTvShowsPage} />
++<Route exact path="/tv/popular" component={PopularTvShowsPage} />
++<Route exact path="/tv" component={TvShowsPage} />
++<Route path="/tv/:id" component={TvShowsDetailsPage} />
++<Route exact path="/movies/kids" component={KidsMoviePage} />
++<Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
++<Route exact path="/reviews/form" component={AddMovieReviewPage} />
++<Route path="/reviews/:id" component={MovieReviewPage} />
++<Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
++<Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
++<Route path="/movies/:id" component={MoviePage} />
++<Route exact path="/movies" component={HomePage}/>
++<Redirect from="*" to="/" />
 
 ## Independent learning (If relevant).
 
 ....... Briefly state any technologies/techniques used in your project codebase that was not covered in the lectures/labs. Provide source code filename (source code excerpts are not required in most cases) references to support your assertions and include references (articles/blogs) ......... 
 
+FireBase I used the documentation that was included in the fire base site, also i implemented the login error, which we had not covered.
+Also I implemented a login and signup and logout.
 
 [model]: ./data.jpg
 [view]: ./view.png
