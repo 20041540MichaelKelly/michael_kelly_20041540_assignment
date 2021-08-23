@@ -13,7 +13,7 @@ const PeoplePage = (props) => {
 
   const { data: person, error, isLoading, isError } = useQuery(
     ["person", { id: id }],
-    getPerson, getPersonMovieCredits, 
+    getPerson, 
   );
 
   const {  data: cast }  = useQuery(

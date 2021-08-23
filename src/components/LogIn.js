@@ -14,7 +14,7 @@ import LockIcon from '@material-ui/icons/Lock';
 import Snackbar from "@material-ui/core/Snackbar"; 
 import MuiAlert from "@material-ui/lab/Alert";
 import { Typography } from "@material-ui/core";
-
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -113,14 +113,14 @@ const LogIn = () => {
           }
         />
         <CardActions>   
-        <button
+        <Button
             style={{
             width: 100,            
             height: 40,
             alignSelf: "center",
             background: "#039BE5",
             color: "white"
-            }}type="submit">Submit</button>
+            }}type="submit">Submit</Button>
           </CardActions>                   
       </form>
       </CardContent>

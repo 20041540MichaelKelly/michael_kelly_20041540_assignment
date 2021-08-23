@@ -81,6 +81,18 @@ export const getMovie = async ( args ) => {
       return response.json();
     };
 
+    export const getMoviePage = async ( args ) => {
+      // eslint-disable-next-line no-unused-vars
+      const [prefix, { pageNum }] = args.queryKey;
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&page=${pageNum}`
+      );
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    };
+
     /**
     ***********************Tv Shows ***********************************
      */
@@ -109,7 +121,7 @@ export const getMovie = async ( args ) => {
 
 export const getMostPopularTvShows = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&vote_average.gte=8`
+    `https://api.themoviedb.org/3/discover/tv/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&vote_average.gte=8`
   );
   if (!response.ok) {
     throw new Error(response.json().message);
@@ -189,10 +201,6 @@ export const getPeopleImages = async ({queryKey}) => {
     }
     return response.json();
 };
-/**
-https://api.themoviedb.org/3/person/popular?api_key=0ac4bad22dc293db80db061a506a35f2&gender/1
-this will get all females
- */
 
   export const getPersonMovieCredits = async ( args ) => {
     // eslint-disable-next-line no-unused-vars

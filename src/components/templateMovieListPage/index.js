@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
 });
 
-function MovieListPageTemplate({ movies, title, action }) {
+function MovieListPageTemplate({ movies, pageNum, title, action }) {
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
