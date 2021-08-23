@@ -1200,9 +1200,9 @@ people images
 
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
 
-![][ss1]
+<img src="./ss1.PNG" alt="Getting started" />
 
-![][ss2]
+![][sceenshot 2](./ss2.PNG)
 
 ![][ss3]
 
@@ -1234,9 +1234,11 @@ people images
 [model]: ./data.jpg
 [view]: ./view.png
 [stories]: ./storybook.png
-[ss1]: ./ss1.png
-[ss2]: ./ss2.png
-[ss3]: ./ss3.png
-[ss4]: ./ss4.png
-[ss5]: ./ss5.png
-[ss6]: ./ss6.png
+[ss1]: ./ss1.PNG
+in the login page an error will diplay if wrong login, but if correct you can go to the movies, tv shows people.
+[ss2]: ./ss2.PNG
+[ss3]: ./ss3.PNG
+[ss4]: ./ss4.PNG
+[ss5]: ./ss5.PNG
+[ss6]: ./ss6.PNG
+[catalog] ./storybookCatalogue.PNG
