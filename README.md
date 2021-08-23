@@ -1217,25 +1217,25 @@ The movie page now have kids and watchlist and review section
 
 ...... Insert a list of the routes supported by your app and state the associated view. If relevant, specify which of the routes require authentication, i.e. protected/private. [For the Movies Fan app, only new routes should be listed.] ......... 
 
-+ <Route exact path="/person" component={PeopleDetailsPage}/>
-+ <Route path="/person/:id" component={PeoplePage} />
-+ <Route exact path="/" component={Home} />
-+ <Route exact path="/login" component={LogIn} />
-+ <Route exact path="/dashbord" component={Dashboard} />
-+ <Route exact path="/signup" component={SignUp} />
-+ <Route exact path="/tv/watchlist" component={WatchlistTvShowsPage} />
-+ <Route exact path="/tv/popular" component={PopularTvShowsPage} />
-+ <Route exact path="/tv" component={TvShowsPage} />
-+ <Route path="/tv/:id" component={TvShowsDetailsPage} />
-+ <Route exact path="/movies/kids" component={KidsMoviePage} />
-+ <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
-+ <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-+ <Route path="/reviews/:id" component={MovieReviewPage} />
-+ <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-+ <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
-+ <Route path="/movies/:id" component={MoviePage} />
-+ <Route exact path="/movies" component={HomePage}/>
-+ <Redirect from="*" to="/" />
++ GET "/person" component={PeopleDetailsPage}/>
++ GET "/person/:id" component={PeoplePage} />
++ GET "/" component={Home} />
++ POST "/login" component={LogIn} />
++ GET"/dashbord" component={Dashboard} />
++ POST"/signup" component={SignUp} />
++ GET "/tv/watchlist" component={WatchlistTvShowsPage} />
++ GET "/tv/popular" component={PopularTvShowsPage} />
++ GET "/tv" component={TvShowsPage} />
++ GET "/tv/:id" component={TvShowsDetailsPage} />
++ GET "/movies/kids" component={KidsMoviePage} />
++ GET "/movies/upcoming" component={UpComingMoviesPage} />
++ POST "/reviews/form" component={AddMovieReviewPage} />
++ GET "/reviews/:id" component={MovieReviewPage} />
++ GET "/movies/favorites" component={FavoriteMoviesPage} />
++ GET "/movies/watchlist" component={WatchlistMoviesPage} />
++ GET "/movies/:id" component={MoviePage} />
++ GET "/movies" component={HomePage}/>
++ GET "/" />
 
 ## Independent learning (If relevant).
 
@@ -1254,4 +1254,4 @@ Also I implemented a login and signup and logout.
 [ss4]: ./ss4.PNG
 [ss5]: ./ss5.PNG
 [ss6]: ./ss6.PNG
-[catalog] ./storybookCatalogue.PNG
+[storybookCatalogue] ./storybookCatalogue.PNG
