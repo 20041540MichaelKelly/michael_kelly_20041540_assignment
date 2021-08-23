@@ -82,12 +82,7 @@ const App = () => {
                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
-                <Redirect from="/movies/page/1" to="/movies" />
-                <Route exact path="/movies/page/:pageNumber" component={HomePage}/>
                 <Route exact path="/movies" component={HomePage}/>
-                
-
-                {/* <Route exact path="/" component={AnonymousAuthPage} /> */}
                 <Redirect from="*" to="/" />
                 
             </Switch>

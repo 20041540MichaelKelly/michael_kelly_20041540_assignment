@@ -22,13 +22,10 @@ function PeopleListPageTemplate({ people, name}) {
       return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
 
     })
-    .filter((m) => {
-      return genderId > 0 ? m.gender.includes(genderId) : true;
-    });
+    
 
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
-    else setGenderFilter(value);
   };
 
   console.log(people)
@@ -43,7 +40,6 @@ function PeopleListPageTemplate({ people, name}) {
           <FilterCard
             onUserInput={handleChange}
             titleFilter={nameFilter}
-            genderFilter={genderFilter}
           />
         </Grid>
         <PeopleList people={displayedPeople}></PeopleList>
