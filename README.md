@@ -1208,10 +1208,11 @@ You can sign up and become authenticated by FireBase DB
 <img src="./ss3.PNG"" />
 The movie page now have kids and watchlist and review section
 <img src="./ss4.PNG"" />
-The tvShow selection with filter and watchlist and you can click to see overview
+>The tvShow selection with filter and watchlist and you can click to see overview
 <img src="./ss5.PNG"" />
 
-<img src="./ss6.PNG"" />
+![][ss6]
+>This is the people overview and you click to see bio
 
 ![][view]
 >Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
