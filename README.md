@@ -47,6 +47,9 @@ follow these steps:
 Kids Movies:
 https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&certification_country=US&certification=PG&sort_by=popularity.desc
 
+<------------------------------------------------------------------------------------>
+getTvShows: https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1
+
 {
     "page": 1,
     "results": [
@@ -448,7 +451,7 @@ https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB
     "total_pages": 290,
     "total_results": 5786
 }
-
+<---------------------------------------------------------------------------------------------------->
 getTvShows:
 https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}
 {
@@ -560,6 +563,409 @@ https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}
     "type": "Scripted",
     "vote_average": 7.2,
     "vote_count": 37
+}
+
+{
+    "page": 1,
+    "results": [
+        {
+            "backdrop_path": "/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg",
+            "first_air_date": "2021-08-11",
+            "genre_ids": [
+                16,
+                10759,
+                10765
+            ],
+            "id": 91363,
+            "name": "What If...?",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "What If...?",
+            "overview": "Taking inspiration from the comic books of the same name, each episode explores a pivotal moment from the Marvel Cinematic Universe and turns it on its head, leading the audience into uncharted territory.",
+            "popularity": 2015.637,
+            "poster_path": "/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+            "vote_average": 8.6,
+            "vote_count": 752
+        },
+        {
+            "backdrop_path": "/pXjpqrx65mlQskf9mfTWSszYODn.jpg",
+            "first_air_date": "2020-05-18",
+            "genre_ids": [
+                10765,
+                10759,
+                18
+            ],
+            "id": 80986,
+            "name": "DC's Stargirl",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "DC's Stargirl",
+            "overview": "Courtney Whitmore, a smart, athletic and above all else kind girl, discovers her step-father has a secret: he used to be the sidekick to a superhero. \"Borrowing\" the long-lost hero’s cosmic staff, she becomes the unlikely inspiration for an entirely new generation of superheroes.",
+            "popularity": 1157.03,
+            "poster_path": "/rbkGgrEHOPyAEZqPk609QN1Ird6.jpg",
+            "vote_average": 8,
+            "vote_count": 790
+        },
+        {
+            "backdrop_path": "/f5tjVQtxihaVwXOdpITSPeIqlpX.jpg",
+            "first_air_date": "2021-06-09",
+            "genre_ids": [
+                18,
+                10765
+            ],
+            "id": 84958,
+            "name": "Loki",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Loki",
+            "overview": "After stealing the Tesseract during the events of “Avengers: Endgame,” an alternate version of Loki is brought to the mysterious Time Variance Authority, a bureaucratic organization that exists outside of time and space and monitors the timeline. They give Loki a choice: face being erased from existence due to being a “time variant” or help fix the timeline and stop a greater threat.",
+            "popularity": 1140.788,
+            "poster_path": "/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "vote_average": 8.2,
+            "vote_count": 7327
+        },
+        {
+            "backdrop_path": "/iDbIEpCM9nhoayUDTwqFL1iVwzb.jpg",
+            "first_air_date": "2017-09-25",
+            "genre_ids": [
+                18
+            ],
+            "id": 71712,
+            "name": "The Good Doctor",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Good Doctor",
+            "overview": "A young surgeon with Savant syndrome is recruited into the surgical unit of a prestigious hospital. The question will arise: can a person who doesn't have the ability to relate to people actually save their lives",
+            "popularity": 1120.956,
+            "poster_path": "/6tfT03sGp9k4c0J3dypjrI8TSAI.jpg",
+            "vote_average": 8.6,
+            "vote_count": 9175
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "2011-08-18",
+            "genre_ids": [],
+            "id": 73106,
+            "name": "Celebrity Big Brother's Bit on the Side",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Celebrity Big Brother's Bit on the Side",
+            "overview": "The place to catch up on all things Celebrity Big Brother UK! Join Rylan Clark-Neal for the best mix of exclusive clips, news and reactions from the house, plus celebrity guests and live debates in the studio.",
+            "popularity": 1386.118,
+            "poster_path": "/4zr7J1UrdqiDyhNU2JHiqozUOLQ.jpg",
+            "vote_average": 3,
+            "vote_count": 2
+        },
+        {
+            "backdrop_path": "/zJZfxi8X3XPHAhxXseRugtnNVtt.jpg",
+            "first_air_date": "2013-12-02",
+            "genre_ids": [
+                16,
+                35,
+                10765,
+                10759
+            ],
+            "id": 60625,
+            "name": "Rick and Morty",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Rick and Morty",
+            "overview": "Rick is a mentally-unbalanced but scientifically-gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school.",
+            "popularity": 923.065,
+            "poster_path": "/8kOWDBK6XlPUzckuHDo3wwVRFwt.jpg",
+            "vote_average": 8.8,
+            "vote_count": 5164
+        },
+        {
+            "backdrop_path": "/qZtAf4Z1lazGQoYVXiHOrvLr5lI.jpg",
+            "first_air_date": "2017-01-26",
+            "genre_ids": [
+                9648,
+                18,
+                80
+            ],
+            "id": 69050,
+            "name": "Riverdale",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Riverdale",
+            "overview": "Set in the present, the series offers a bold, subversive take on Archie, Betty, Veronica and their friends, exploring the surreality of small-town life, the darkness and weirdness bubbling beneath Riverdale’s wholesome facade.",
+            "popularity": 885.452,
+            "poster_path": "/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg",
+            "vote_average": 8.6,
+            "vote_count": 11791
+        },
+        {
+            "backdrop_path": "/rSqKcCgC3FvEqXZiY89OEe2vEov.jpg",
+            "first_air_date": "2021-08-06",
+            "genre_ids": [
+                18,
+                10765
+            ],
+            "id": 95281,
+            "name": "S.O.Z: Soldiers or Zombies",
+            "origin_country": [
+                "ES"
+            ],
+            "original_language": "es",
+            "original_name": "S.O.Z: Soldados o Zombies",
+            "overview": "Drug lord Alonso Marroquín escapes from a Mexican prison in an attempt to go into hiding. A US military secret experiment goes wrong and the elite unit from the Mexican Police that is after Marroquín gets infected, creating a new zombie species. The Army and the zombies end up at the drug lord’s hideout and a battle for human survival begins.",
+            "popularity": 881.042,
+            "poster_path": "/lICAhPifWrXpscCvweCrUdCzCuG.jpg",
+            "vote_average": 7.5,
+            "vote_count": 279
+        },
+        {
+            "backdrop_path": "/uro2Khv7JxlzXtLb8tCIbRhkb9E.jpg",
+            "first_air_date": "2010-10-31",
+            "genre_ids": [
+                10759,
+                18,
+                10765
+            ],
+            "id": 1402,
+            "name": "The Walking Dead",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Walking Dead",
+            "overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+            "popularity": 852.499,
+            "poster_path": "/w21lgYIi9GeUH5dO8l3B9ARZbCB.jpg",
+            "vote_average": 8.1,
+            "vote_count": 11371
+        },
+        {
+            "backdrop_path": "/eyG9srihv68ScRdEbJZj66WT4O0.jpg",
+            "first_air_date": "2014-10-07",
+            "genre_ids": [
+                18,
+                10765
+            ],
+            "id": 60735,
+            "name": "The Flash",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Flash",
+            "overview": "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+            "popularity": 834.151,
+            "poster_path": "/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg",
+            "vote_average": 7.8,
+            "vote_count": 8303
+        },
+        {
+            "backdrop_path": "/pnyT1foDmmXTsho2DfxN2ePI8ix.jpg",
+            "first_air_date": "2018-06-12",
+            "genre_ids": [
+                18
+            ],
+            "id": 80240,
+            "name": "The Queen of Flow",
+            "origin_country": [
+                "CO"
+            ],
+            "original_language": "es",
+            "original_name": "La Reina del Flow",
+            "overview": "After spending seventeen years in prison unfairly, a talented songwriter seeks revenge on the men who sank her and killed her family.",
+            "popularity": 537.262,
+            "poster_path": "/fuVuDYrs8sxvEolnYr0wCSvtyTi.jpg",
+            "vote_average": 8,
+            "vote_count": 1016
+        },
+        {
+            "backdrop_path": "/ta5oblpMlEcIPIS2YGcq9XEkWK2.jpg",
+            "first_air_date": "2016-01-25",
+            "genre_ids": [
+                80,
+                10765
+            ],
+            "id": 63174,
+            "name": "Lucifer",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Lucifer",
+            "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+            "popularity": 819.67,
+            "poster_path": "/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+            "vote_average": 8.5,
+            "vote_count": 9919
+        },
+        {
+            "backdrop_path": "/bjsoOPkViI5WIREQb94XDeXrZlF.jpg",
+            "first_air_date": "2021-07-26",
+            "genre_ids": [],
+            "id": 129936,
+            "name": "Ilha Record",
+            "origin_country": [
+                "BR"
+            ],
+            "original_language": "pt",
+            "original_name": "Ilha Record",
+            "overview": "",
+            "popularity": 1041.818,
+            "poster_path": "/43pX5G2eL4H6EppxVcirMxdkcGN.jpg",
+            "vote_average": 1.8,
+            "vote_count": 3
+        },
+        {
+            "backdrop_path": "/aGULNElJVpSru19WP2pUjopPX1U.jpg",
+            "first_air_date": "2021-07-28",
+            "genre_ids": [
+                80,
+                10766
+            ],
+            "id": 128252,
+            "name": "The Snitch Cartel: Origins",
+            "origin_country": [
+                "CO"
+            ],
+            "original_language": "es",
+            "original_name": "El cartel de los sapos: El origen",
+            "overview": "In Cali during the '60s and '70s, two brothers juggle family, romance and the joint pursuit of a burning ambition: to rule Colombia's drug industry.",
+            "popularity": 769.181,
+            "poster_path": "/A17Rt6BLHno0puR1QXbsSKhBfA4.jpg",
+            "vote_average": 8.1,
+            "vote_count": 80
+        },
+        {
+            "backdrop_path": "/usqUuDbYX9OvfeQZwMCBfdvJeYl.jpg",
+            "first_air_date": "2021-08-08",
+            "genre_ids": [],
+            "id": 129231,
+            "name": "Dream of Chang'an",
+            "origin_country": [
+                "CN"
+            ],
+            "original_language": "zh",
+            "original_name": "与君歌",
+            "overview": "",
+            "popularity": 984.095,
+            "poster_path": "/xqmSC7LwdD2xbuIUScZHCzcQHcI.jpg",
+            "vote_average": 6.2,
+            "vote_count": 3
+        },
+        {
+            "backdrop_path": "/3IIBf6VlwEyKAX4cN2XCM1gKdgM.jpg",
+            "first_air_date": "2005-03-27",
+            "genre_ids": [
+                18
+            ],
+            "id": 1416,
+            "name": "Grey's Anatomy",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Grey's Anatomy",
+            "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+            "popularity": 702.023,
+            "poster_path": "/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
+            "vote_average": 8.2,
+            "vote_count": 6572
+        },
+        {
+            "backdrop_path": "/pPKiIJEEcV0E1hpVcWRXyp73ZpX.jpg",
+            "first_air_date": "2021-02-23",
+            "genre_ids": [
+                10765,
+                10759,
+                18
+            ],
+            "id": 95057,
+            "name": "Superman & Lois",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Superman & Lois",
+            "overview": "After years of facing megalomaniacal supervillains, monsters wreaking havoc on Metropolis, and alien invaders intent on wiping out the human race, The Man of Steel aka Clark Kent and Lois Lane come face to face with one of their greatest challenges ever: dealing with all the stress, pressures and complexities that come with being working parents in today's society.",
+            "popularity": 608.961,
+            "poster_path": "/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+            "vote_average": 8.3,
+            "vote_count": 1167
+        },
+        {
+            "backdrop_path": "/uRIiWJ0MrdNjykxl4mp8mXEi308.jpg",
+            "first_air_date": "2018-10-12",
+            "genre_ids": [
+                10759,
+                10765,
+                18
+            ],
+            "id": 75450,
+            "name": "Titans",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Titans",
+            "overview": "A team of young superheroes led by Nightwing (formerly Batman's first Robin) form to combat evil and other perils.",
+            "popularity": 573.366,
+            "poster_path": "/xKnUNWFsAOaKIviIYBLei02Bauu.jpg",
+            "vote_average": 8.1,
+            "vote_count": 1665
+        },
+        {
+            "backdrop_path": "/thuQmpI9OZNEUTqkkNsNZVDsgNP.jpg",
+            "first_air_date": "2021-06-17",
+            "genre_ids": [
+                35,
+                18
+            ],
+            "id": 119243,
+            "name": "iCarly",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "iCarly",
+            "overview": "Ten years after signing off of one of TV's most iconic shows, Carly, Spencer, and Freddie are back, navigating the next chapter of their lives, facing the uncertainties of life in their twenties.",
+            "popularity": 598.495,
+            "poster_path": "/s5k4GqTUGXeUdScNrjpYfiQLKHI.jpg",
+            "vote_average": 7.7,
+            "vote_count": 445
+        },
+        {
+            "backdrop_path": "/qyDlF1U1yayXIUniECmGA1oBwZy.jpg",
+            "first_air_date": "2011-06-23",
+            "genre_ids": [
+                18
+            ],
+            "id": 37680,
+            "name": "Suits",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Suits",
+            "overview": "While running from a drug deal gone bad, Mike Ross, a brilliant young college-dropout, slips into a job interview with one of New York City's best legal closers, Harvey Specter. Tired of cookie-cutter law school grads, Harvey takes a gamble by hiring Mike on the spot after he recognizes his raw talent and photographic memory.",
+            "popularity": 549.232,
+            "poster_path": "/vQiryp6LioFxQThywxbC6TuoDjy.jpg",
+            "vote_average": 8,
+            "vote_count": 2355
+        }
+    ],
+    "total_pages": 500,
+    "total_results": 10000
 }
 
 ## App Design.

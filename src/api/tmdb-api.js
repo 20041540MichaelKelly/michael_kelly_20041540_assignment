@@ -129,15 +129,15 @@ export const getMostPopularTvShows = async () => {
   return response.json();
 };
 
-export const getKidsTvShows = async () => {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&genre_names=Sci-Fi %26 Fantasy&%26certification_country=US&page=1`
-  );
-  if (!response.ok) {
-    throw new Error(response.json().message);
-  }
-  return response.json();
-};
+// export const getKidsTvShows = async () => {
+//   const response = await fetch(
+//     `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&genre_names=Sci-Fi %26 Fantasy&%26certification_country=US&page=1`
+//   );
+//   if (!response.ok) {
+//     throw new Error(response.json().message);
+//   }
+//   return response.json();
+// };
 
     export const getTvShowImages = async ({queryKey}) => {
     // eslint-disable-next-line no-unused-vars
