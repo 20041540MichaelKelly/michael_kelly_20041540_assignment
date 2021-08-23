@@ -1192,7 +1192,7 @@ people images
 
 ....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
 
-
+<img src="./storybookCatalogue.PNG"" />
 
 ![][stories]
 
@@ -1200,17 +1200,18 @@ people images
 
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
 
-<img src="./ss1.PNG" alt="Getting started" />
+<img src="./ss1.PNG"" />
+in the login page an error will diplay if wrong login, but if correct you can go to the movies, tv shows people.
 
-![][sceenshot 2](./ss2.PNG)
+<img src="./ss2.PNG"" />
+You can sign up and become authenticated by FireBase DB
+<img src="./ss3.PNG"" />
+The movie page now have kids and watchlist and review section
+<img src="./ss4.PNG"" />
+The tvShow selection with filter and watchlist and you can click to see overview
+<img src="./ss5.PNG"" />
 
-![][ss3]
-
-![][ss4]
-
-![][ss5]
-
-![][ss6]
+<img src="./ss6.PNG"" />
 
 ![][view]
 >Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
@@ -1235,7 +1236,7 @@ people images
 [view]: ./view.png
 [stories]: ./storybook.png
 [ss1]: ./ss1.PNG
-in the login page an error will diplay if wrong login, but if correct you can go to the movies, tv shows people.
+
 [ss2]: ./ss2.PNG
 [ss3]: ./ss3.PNG
 [ss4]: ./ss4.PNG
