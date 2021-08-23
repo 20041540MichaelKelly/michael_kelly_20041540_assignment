@@ -1192,9 +1192,7 @@ people images
 
 ....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
 
-<img src="./storybookCatalogue.PNG"" />
-
-![][stories]
+![][storybookCatalogue]
 >This is the story book catalogue covers about 90 %
 
 ### UI Design.
@@ -1219,25 +1217,25 @@ The movie page now have kids and watchlist and review section
 
 ...... Insert a list of the routes supported by your app and state the associated view. If relevant, specify which of the routes require authentication, i.e. protected/private. [For the Movies Fan app, only new routes should be listed.] ......... 
 
-+<Route exact path="/person" component={PeopleDetailsPage}/>
-+<Route path="/person/:id" component={PeoplePage} />
-+<Route exact path="/" component={Home} />
-+<Route exact path="/login" component={LogIn} />
-+<Route exact path="/dashbord" component={Dashboard} />
-+<Route exact path="/signup" component={SignUp} />
-+<Route exact path="/tv/watchlist" component={WatchlistTvShowsPage} />
-+<Route exact path="/tv/popular" component={PopularTvShowsPage} />
-+<Route exact path="/tv" component={TvShowsPage} />
-+<Route path="/tv/:id" component={TvShowsDetailsPage} />
-+<Route exact path="/movies/kids" component={KidsMoviePage} />
-+<Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
-+<Route exact path="/reviews/form" component={AddMovieReviewPage} />
-+<Route path="/reviews/:id" component={MovieReviewPage} />
-+<Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-+<Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
-+<Route path="/movies/:id" component={MoviePage} />
-+<Route exact path="/movies" component={HomePage}/>
-+<Redirect from="*" to="/" />
++ <Route exact path="/person" component={PeopleDetailsPage}/>
++ <Route path="/person/:id" component={PeoplePage} />
++ <Route exact path="/" component={Home} />
++ <Route exact path="/login" component={LogIn} />
++ <Route exact path="/dashbord" component={Dashboard} />
++ <Route exact path="/signup" component={SignUp} />
++ <Route exact path="/tv/watchlist" component={WatchlistTvShowsPage} />
++ <Route exact path="/tv/popular" component={PopularTvShowsPage} />
++ <Route exact path="/tv" component={TvShowsPage} />
++ <Route path="/tv/:id" component={TvShowsDetailsPage} />
++ <Route exact path="/movies/kids" component={KidsMoviePage} />
++ <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
++ <Route exact path="/reviews/form" component={AddMovieReviewPage} />
++ <Route path="/reviews/:id" component={MovieReviewPage} />
++ <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
++ <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
++ <Route path="/movies/:id" component={MoviePage} />
++ <Route exact path="/movies" component={HomePage}/>
++ <Redirect from="*" to="/" />
 
 ## Independent learning (If relevant).
 
