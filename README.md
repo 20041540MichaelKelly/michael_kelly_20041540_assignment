@@ -1,10 +1,10 @@
 # Assignment - ReactJS app.
 
-Name: Michael Kelly your name 20041540
+Name: Michael Kelly student number 20041540
 
 ## Overview.
 
-...... State the app concept and objectives. If it's the Movies Fan app extension, only state the additional objectives .........
+
 
 The additional objectives for the Movies App I eloberated on. Is to implement the tv show section
 that will have a watch list feature, The movie list has the favourites feature. The the user will be able to filter tv shows etc. Also I have implemented a login system, that uses FireBase authenthication and Database. Also a popular people section where the user can see there images and then click into view there biography. Also it displays their birthdays and all the movies that they have appeared in. I am going for full storybook support also, so overall i am attempting to tick the box's required.
@@ -1179,17 +1179,20 @@ getPersonMovieCredits: https://api.themoviedb.org/3/person/${id}/movie_credits?a
 
 getTvShowReviews: https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}
 
+people popular
+    `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+person
+    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+people images
+      `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+
 ## App Design.
 
 ### Component catalogue.
 
 ....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
-![][ss1]
-![][ss2]
-![][ss3]
-![][ss4]
-![][ss5]
-![][ss6]
+
+
 
 ![][stories]
 
@@ -1198,10 +1201,15 @@ getTvShowReviews: https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${proces
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
 
 ![][ss1]
+
 ![][ss2]
+
 ![][ss3]
+
 ![][ss4]
+
 ![][ss5]
+
 ![][ss6]
 
 ![][view]
