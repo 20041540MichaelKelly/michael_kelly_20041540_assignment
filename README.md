@@ -565,6 +565,10 @@ https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}
     "vote_count": 37
 }
 
+<---------------------------------------------------------------------------------->
+getPersonMovieCredits: https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US
+
+
 {
     "page": 1,
     "results": [
@@ -968,17 +972,237 @@ https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}
     "total_results": 10000
 }
 
+{
+    "cast": [],
+    "crew": [
+        {
+            "overview": "Popeye is a super-strong, spinach-scarfing sailor man who's searching for his father. During a storm that wrecks his ship, Popeye washes ashore and winds up rooming at the Oyl household, where he meets Olive. Before he can win her heart, he must first contend with Olive's fiancé, Bluto.",
+            "release_date": "1980-12-12",
+            "poster_path": "/hCCp4pESgYY6uTFARYf4UYV1BdU.jpg",
+            "id": 11335,
+            "adult": false,
+            "backdrop_path": "/asBlZAVjFQDPFADrhrmkOVM6TxK.jpg",
+            "genre_ids": [
+                28,
+                12,
+                35,
+                10751
+            ],
+            "vote_count": 431,
+            "original_language": "en",
+            "original_title": "Popeye",
+            "vote_average": 5.4,
+            "video": false,
+            "title": "Popeye",
+            "popularity": 10.696,
+            "credit_id": "52fe44289251416c7502adad",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/cqUYitpW3nyaAWSyi1AirJ4Qg0E.jpg",
+            "genre_ids": [
+                80,
+                9648
+            ],
+            "id": 6103,
+            "original_language": "en",
+            "original_title": "Thirteen at Dinner",
+            "overview": "Actress Jane Wilkinson wants a divorce, but her husband, Lord Edgware, refuses. She convinces Hercule Poirot to use his famed tact and logic to make her case. Lord Edgware turns up murdered, a well-placed knife wound at the base of his neck. It will take the precise Poirot to sort out the lies from the alibis - and find the criminal before another victim dies.",
+            "poster_path": "/id2wDf7mKgI5oHIRefIz31hhrXC.jpg",
+            "release_date": "1985-09-19",
+            "title": "Thirteen at Dinner",
+            "video": false,
+            "vote_average": 5.5,
+            "vote_count": 34,
+            "popularity": 5.475,
+            "credit_id": "52fe443dc3a36847f808a42f",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "overview": "A blind Vietnam vet, trained as a swordfighter, comes to America and helps to rescue the son of a fellow soldier.",
+            "release_date": "1989-08-17",
+            "adult": false,
+            "backdrop_path": "/rrnya09qUcArCReu2Xvy6tedmPu.jpg",
+            "vote_count": 284,
+            "genre_ids": [
+                28,
+                53
+            ],
+            "id": 19124,
+            "original_language": "en",
+            "original_title": "Blind Fury",
+            "poster_path": "/bAkVEo8wEy5Q3oD1OxOXN3ijnP9.jpg",
+            "title": "Blind Fury",
+            "video": false,
+            "vote_average": 6.5,
+            "popularity": 14.917,
+            "credit_id": "52fe47bc9251416c750a3c8f",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "id": 145979,
+            "video": false,
+            "vote_count": 4,
+            "vote_average": 3.3,
+            "title": "Heartbeat",
+            "release_date": "1993-02-08",
+            "original_language": "en",
+            "original_title": "Heartbeat",
+            "genre_ids": [
+                18,
+                10749,
+                10770
+            ],
+            "backdrop_path": "/prs66iluN1jitESP5Caj3lsGY9I.jpg",
+            "adult": false,
+            "overview": "The beautiful and talented Adrian is a writer for one of America's most popular TV soap operas. She is also pregnant, and when she refuses to abort her baby, Adrian's selfish husband deserts her. It falls to one of the soap opera's producers, the recently divorced Bill, to convince Adrian to give romance a second chance.",
+            "poster_path": "/b51MD48rJr8yGyNJgVmlNdlXEhE.jpg",
+            "popularity": 1.4,
+            "credit_id": "538c93b6c3a368714b002dc1",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "id": 109924,
+            "video": false,
+            "vote_count": 3,
+            "vote_average": 4.3,
+            "title": "Mayflower Madam",
+            "release_date": "1987-11-15",
+            "original_language": "en",
+            "original_title": "Mayflower Madam",
+            "genre_ids": [
+                18
+            ],
+            "backdrop_path": null,
+            "adult": false,
+            "overview": "Inspired by the explosive sex-for-sale scandal that rocked Manhattan in 1984, the infamous Sydney Biddle Barrows, a driven young socialite, opens an exclusive escort service catering to the wealthy and affluent. From Sydney's rise to become a million-dollar, modern-day madam to her notorious plummet into bankruptcy and public disgrace, experience a private glimpse into the forbidden world of high-class prostitution-where money talks...pleasure sells...and discretion is everything.",
+            "poster_path": "/aAlyjv2lBBXUdRP7Q2EESaCRM7d.jpg",
+            "popularity": 1.3,
+            "credit_id": "58876f5d92514166680040c8",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                80,
+                18,
+                10770
+            ],
+            "id": 155239,
+            "original_language": "es",
+            "original_title": "Midwives",
+            "overview": "It's a cold and stormy night, and in a house in rural Vermont, midwife Sibyl Danforth is, together with the father and an assistant, in the middle of a homebirth. As time passes, the woman in labor meets with difficulties and Sibyl concludes that it would be preferable for the woman to deliver her baby in the hospital. Though a dead telephone line and bad weather prevents Sibyl from going anywhere. Black ice and a persisten snowstorm makes transportation an impossibility. Early in the morning, the woman dies from what they believe to be a stroke and in all the chaos, Sibyl promptly decides to do a C-section to save the baby. The baby survives, but the mother is dead and tragedy is obvious. Yet, it's only going to get worse for Sibyl as her assistant is certain that the woman was still alive when Sibyl performed the C-section. Sibyl is charged with manslaughter, brought before the court and her life is and will forever be changed.",
+            "poster_path": "/y0tFzAcWbYB0T5OhEJxRvknOE2Z.jpg",
+            "release_date": "2001-04-02",
+            "title": "Midwives",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 5,
+            "popularity": 1.154,
+            "credit_id": "58de4602c3a3687c4d00b606",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                18,
+                10770
+            ],
+            "id": 117199,
+            "original_language": "en",
+            "original_title": "Men Don't Tell",
+            "overview": "This movie shows another side to spousal abuse that not too many people thought is possible--the husband being abused and the wife the abuser.",
+            "poster_path": "/gHkOV4rZY1GdaaogM25b5otztmm.jpg",
+            "release_date": "1993-03-14",
+            "title": "Men Don't Tell",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 4,
+            "popularity": 0.96,
+            "credit_id": "59dc8d54c3a36861ec070bf0",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                18,
+                10770
+            ],
+            "id": 594680,
+            "original_language": "en",
+            "original_title": "A Time to Heal",
+            "overview": "",
+            "poster_path": "/bBleF32lgd6NMpHSpRcLK9w81oc.jpg",
+            "release_date": "1994-04-08",
+            "title": "A Time to Heal",
+            "video": false,
+            "vote_average": 10.0,
+            "vote_count": 1,
+            "popularity": 2.027,
+            "credit_id": "5ded7567025764001653573d",
+            "department": "Editing",
+            "job": "Editor"
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                18,
+                10770
+            ],
+            "id": 529418,
+            "original_language": "en",
+            "original_title": "Taking Back My Life: The Nancy Ziegenmeyer Story",
+            "overview": "True story about a rape victim who took a stand that rape is never the victim's fault and inspired many other victims who felt shame about what had happened to them to speak out.",
+            "poster_path": "/9qaPxozx4cBBgBXL7eJqkCXJnHj.jpg",
+            "release_date": "1992-03-15",
+            "title": "Taking Back My Life: The Nancy Ziegenmeyer Story",
+            "video": false,
+            "vote_average": 6.0,
+            "vote_count": 1,
+            "popularity": 0.722,
+            "credit_id": "5deec5b6dc86470013c60257",
+            "department": "Editing",
+            "job": "Editor"
+        },
+
+getTvShowReviews: https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}
+
 ## App Design.
 
 ### Component catalogue.
 
 ....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
+![][ss1]
+![][ss2]
+![][ss3]
+![][ss4]
+![][ss5]
+![][ss6]
 
 ![][stories]
 
 ### UI Design.
 
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
+
+![][ss1]
+![][ss2]
+![][ss3]
+![][ss4]
+![][ss5]
+![][ss6]
 
 ![][view]
 >Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
@@ -1002,3 +1226,9 @@ https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}
 [model]: ./data.jpg
 [view]: ./view.png
 [stories]: ./storybook.png
+[ss1]: ./ss1.png
+[ss2]: ./ss2.png
+[ss3]: ./ss3.png
+[ss4]: ./ss4.png
+[ss5]: ./ss5.png
+[ss6]: ./ss6.png

@@ -11,7 +11,7 @@ export const getUpComingMovies = async () => {
 
 export const getMovies = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=4 `
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=3&total_pages=5 `
   );
   if (!response.ok) {
     throw new Error(response.json().message);
@@ -121,7 +121,7 @@ export const getMovie = async ( args ) => {
 
 export const getMostPopularTvShows = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/discover/tv/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&vote_average.gte=8`
+    `https://api.themoviedb.org/3/discover/tv/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`
   );
   if (!response.ok) {
     throw new Error(response.json().message);

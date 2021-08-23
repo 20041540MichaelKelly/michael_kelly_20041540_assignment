@@ -66,5 +66,32 @@ export default {
     known_for_department: "Acting",
     name: "Katherine LaNasa",
     popularity: 417.738,
-    profile_path: "/a1T5Smn7sCEtV8NHvTa5WaxgOML.jpg"
+    profile_path: "/a1T5Smn7sCEtV8NHvTa5WaxgOML.jpg",
+cast: [
+    {
+        overview: "Popeye is a super-strong, spinach-scarfing sailor man who's searching for his father. During a storm that wrecks his ship, Popeye washes ashore and winds up rooming at the Oyl household, where he meets Olive. Before he can win her heart, he must first contend with Olive's fiancé, Bluto.",
+        release_date: "1980-12-12",
+        poster_path: "/hCCp4pESgYY6uTFARYf4UYV1BdU.jpg",
+        id: 11335,
+        adult: false,
+        backdrop_path: "/asBlZAVjFQDPFADrhrmkOVM6TxK.jpg",
+        genre_ids: [
+            28,
+            12,
+            35,
+            10751
+        ],
+        vote_count: 431,
+        original_language: "en",
+        original_title: "Popeye",
+        vote_average: 5.4,
+        video: false,
+        title: "Popeye",
+        popularity: 10.696,
+        credit_id: "52fe44289251416c7502adad",
+        department: "Editing",
+        job: "Editor"
+    }
+]
+      
 };
