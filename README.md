@@ -1,10 +1,10 @@
 # Assignment - ReactJS app.
 
-Name: Michael Kelly your name 20041540
+Name: Michael Kelly student number 20041540
 
 ## Overview.
 
-...... State the app concept and objectives. If it's the Movies Fan app extension, only state the additional objectives .........
+
 
 The additional objectives for the Movies App I eloberated on. Is to implement the tv show section
 that will have a watch list feature, The movie list has the favourites feature. The the user will be able to filter tv shows etc. Also I have implemented a login system, that uses FireBase authenthication and Database. Also a popular people section where the user can see there images and then click into view there biography. Also it displays their birthdays and all the movies that they have appeared in. I am going for full storybook support also, so overall i am attempting to tick the box's required.
@@ -1179,56 +1179,79 @@ getPersonMovieCredits: https://api.themoviedb.org/3/person/${id}/movie_credits?a
 
 getTvShowReviews: https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}
 
+people popular
+    `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+person
+    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+people images
+      `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+
 ## App Design.
 
 ### Component catalogue.
 
 ....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
-![][ss1]
-![][ss2]
-![][ss3]
-![][ss4]
-![][ss5]
-![][ss6]
 
-![][stories]
+![][storybookCatalogue]
+>This is the story book catalogue covers about 90 %
 
 ### UI Design.
 
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
 
 ![][ss1]
+in the login page an error will diplay if wrong login, but if correct you can go to the movies, tv shows people.
 ![][ss2]
+You can sign up and become authenticated by FireBase DB
 ![][ss3]
+The movie page now have kids and watchlist and review section
 ![][ss4]
+>The tvShow selection with filter and watchlist and you can click to see overview
 ![][ss5]
+>the overview of a tv show
 ![][ss6]
+>This is the people overview and you click to see bio
 
-![][view]
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
 
 ### Routing.
 
 ...... Insert a list of the routes supported by your app and state the associated view. If relevant, specify which of the routes require authentication, i.e. protected/private. [For the Movies Fan app, only new routes should be listed.] ......... 
 
-+ GET /blogs - displays all published blogs.
-+ POST /blogs (protected) - add a new blog.
-+ GET /blogs/:id - displays a particular blog.
-+ GET /blogs/:id/comments (protected) - detail view of a particular blog and its comments.
-+ etc.
-+ etc.
++ GET "/person" component={PeopleDetailsPage}/>
++ GET "/person/:id" component={PeoplePage} />
++ GET "/" component={Home} />
++ POST "/login" component={LogIn} />
++ GET"/dashbord" component={Dashboard} />
++ POST"/signup" component={SignUp} />
++ GET "/tv/watchlist" component={WatchlistTvShowsPage} />
++ GET "/tv/popular" component={PopularTvShowsPage} />
++ GET "/tv" component={TvShowsPage} />
++ GET "/tv/:id" component={TvShowsDetailsPage} />
++ GET "/movies/kids" component={KidsMoviePage} />
++ GET "/movies/upcoming" component={UpComingMoviesPage} />
++ POST "/reviews/form" component={AddMovieReviewPage} />
++ GET "/reviews/:id" component={MovieReviewPage} />
++ GET "/movies/favorites" component={FavoriteMoviesPage} />
++ GET "/movies/watchlist" component={WatchlistMoviesPage} />
++ GET "/movies/:id" component={MoviePage} />
++ GET "/movies" component={HomePage}/>
++ GET "/" />
 
 ## Independent learning (If relevant).
 
 ....... Briefly state any technologies/techniques used in your project codebase that was not covered in the lectures/labs. Provide source code filename (source code excerpts are not required in most cases) references to support your assertions and include references (articles/blogs) ......... 
 
+FireBase I used the documentation that was included in the fire base site, also i implemented the login error, which we had not covered.
+Also I implemented a login and signup and logout.
 
 [model]: ./data.jpg
 [view]: ./view.png
 [stories]: ./storybook.png
-[ss1]: ./ss1.png
-[ss2]: ./ss2.png
-[ss3]: ./ss3.png
-[ss4]: ./ss4.png
-[ss5]: ./ss5.png
-[ss6]: ./ss6.png
+[ss1]: ./ss1.PNG
+
+[ss2]: ./ss2.PNG
+[ss3]: ./ss3.PNG
+[ss4]: ./ss4.PNG
+[ss5]: ./ss5.PNG
+[ss6]: ./ss6.PNG
+[storybookCatalogue] ./storybookCatalogue.PNG
